@@ -1,0 +1,536 @@
+
+<!-- <img src="images/giphy-downsized.gif" class="loader" id="success"> -->
+
+<px-card header-text="">
+<br>
+
+<i class="fa fa-chevron-left backbtn" aria-hidden="true" ng-click="goback()"></i>&nbsp;<span ng-click="goback()" style="cursor:pointer"><i><u>Back</u></i></span><!-- </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:medium"><b><u>Billing Registry Line Items</u></b></span> -->
+<div style="text-align: center; font-size:medium"><strong><u>Billing Registry Line Items</u></strong></div>
+
+
+
+
+<!-- <div id="alert">
+<px-alert-message
+   type="information"
+action="acknowledge"
+    message-title="Success!"
+    message="{{msg}}"
+    auto-dismiss="10000">
+</px-alert-message>
+</div> -->
+
+<px-modal   
+ btn-modal-positive="Ok" >
+		 <input type="button" id="successmsg" class="modal-trigger" value="" style="display: none;"> 
+		<div>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<img class="icon icons8-Ok-Filled" width="30" height="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAD8klEQVRoQ+1aX1LaYBD/LbF9LTeoj51pQ6GG5+IJqicQTtBwAvEESU8gnkB7AvGZOFDSzvStegN462jjdr5AmBAg+fLli3ac+uZkd7O//b8bCM/kj54JDvwHssmT5rD7iSpcZ0aLGFUQ1VfomMdMmBJhwEQD/4NzpSsiCnvk3dBuEeGIQG0VpRjcZ8bZ96Y7UOGPeJSBmJ59QIAD0G4RBZa8c2+d+JZ7oSIvN5A3I3v3RYBTArVUXpjFw+DBvYHOz4Z7k0Ubf54LyMILpwBV87wkPy1PGejk8Y40kNq1fQymXn6lCnAQ9yZ77omMBCkgpmeLUFJKZhkl0mhEMfAtt5MlJxNIbWj3QHScJajU58wnk6abGg2pQOY5QeelKikpnMGHaTmzFYioTi8DjMpPbEkk4Omdgca2arYViOnZl2WVWFnVk3SiNPuWu7+JfyOQJwipGTPGRPiYBXJbiG0EUvPsX9o6dpZm4jlxd7LnujWv6wL4nMrCPJ403UaSZg2ImJ0qRJcy79dBw4wrv+mEU4KsAR+Y95Oz2RoQ0+v2CTjSoaSEjNmdwXWRwHnKPANnvuWs9LU1IDWvyxIK6CFZhNTbkV03AhrlETqxnBXdV/55zCRn4JtvOeG+Uhvao7XdJQNVMrxWgORxbx7rbaINDG78aLhj5Xcmuv2qR4bdgUwJLAoCCyWKNN14kQgLX1wpFRcrgLqdWE64jBVquokyvArkERI9iu3atW2DyVEwxJIlnvCPDeTLxHLs+siuPgQQTbfQgqYLyCwwuGUE4Z6S3o3nNrytGFwfN9yp6dnnBDoo4g3BqwVIfIAzr+02MZ2mKRbNSDpL/FYgptcdE/Be1lLx7S0NDANffcs50BVSQr94H1qrWqZK+WUeV3awL0Jm0aHFfepVzBizisG74rnUUChpxazyq7bWpoCJQkr7MJraEAuttnwTGDgU3Xp++6ILMKZisl2ElNg29RzzAKSOKPNRusjQyNPAwL4AI5T/DVTDyVZmz5AMqYgsdWicd9uiY/zqcU1lss3CJDXG64plJu74e26/jLFHarFahJe4u77OskzWc9FrdB8wkmU30uFfOT5k2WT5PNfxIcwVlZ4irY4aYbJ3xKVkHOhonGhuahro4Vru95vEPf+TaYRaeRXV44W5lKJH7EiX4r1FHdWmnpE7tOIMT+IZCU+klt9t9lvsEv1HKAAzBrdL+fQWgQsHwj/UL+vaIkrs/Q63S/0YGveU8A5AvTyLWFqmiI4NcC+PF6T6iGx6zn8wQG3Ve7FIZmbuP9kPBjYBDQdOoMXiGzyhmvRWaHXGlMCDB2BQVHmtHpH1XNl0mV91y1ZAl/xnA+QvO8wMUVCCtvUAAAAASUVORK5CYII="> 
+	     </div>
+	     <p style="text-align:center">{{successMsg}}</p>
+		 </px-modal>
+
+<px-modal   btn-modal-positive="Ok">
+		 <input type="button" id="errormsg" class="modal-trigger" value="" style="display: none;">
+		 
+		 <div style="align:center;">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		 <img class="icon icons8-Warning-Shield" width="30" height="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAACJ0lEQVRIS72WT27TQBTGv+eYBWJB2SA5G9ITEHZRHImyixpL7Q0oJyCcgPQE9Q1ob9BKdsWOIMUVS/cEZBVL3QALJCQcPzQT7PrveMyCt7Tfm9/M+755NqFDRIfjEyZ6K0oIcC0/uNAtJ51EAQDRexANCvnMawALHaASdHc4Hm4N4wzAQcuGlr0keff0+iZsyqsFfTse7v36/egMRCc6J05zmNl9+ODn6ZPL8Hu5LgNF09GATPMo2e3+gIC9LpAMBgjI0gCWHMdX1scvor1C011EM3sNomf/snhjDfPa8oP9ziAG3xJo/nfhT22bEvl9LxgWQc5kCeBlS/Fny1tJY0TOhNtAALL8+9b9L9DGGbsEQ17GpmDmsO8HLzqc6NTyVotC6zYze05E4s4ow/JWsgtarUuSN9b1zXlZI9H7VoE7gYBXlrcS2t/bW3eXXUBpbgW0mdmXRHSk6p0uiJmv+n5wnK5VGEE6OumCkNOn2rrpaADT/NriB+kiMbWVeXG8n46fCkjqNLPPQfS60eLg210hPVfcgwvLDwoDuTK9I2fS6L78SNk4dqiAZW6r1Sh9GDVMifyFbQKVTaAGCa16ZgjC43J7BEy2jkgOy0IwfmAbD/PaKEFSK/H5NowPLcYovi45Lf9S+SlvM0bxNFwxgDZIx4VyMVZDau1d1yrlyTQg2qBMMzLczCBCeE7m6XRu01Lrvy6z/XQ04F7PJfEDst0u6tzVBPwDP+D/G7UP/SMAAAAASUVORK5CYII="></div>
+		  <p style="text-align:center">{{errorMsg}}</p>
+		 </px-modal>
+<!--  <ul class="breadcrumb">
+  <li><a href="#">Billing</a></li>
+ 
+  <li>Billing Register</li>
+</ul> -->
+     <!-- <div class="breadcrumb">
+     <br>
+       <a href="#" class="active" style="color:white">Billing</a>
+       <a href="#" class="active" style="color:white" ng-click="view()">View</a>
+      <a href="#" class="active" style="color:white" ng-click="billingregistry()">Billing Registry</a>
+       </div>
+    <br>
+    <br>	-->
+
+
+
+
+
+
+
+
+	<div class="AllByReqNoDetails">
+		<!-- <table align="center" width="100%" cell-padding="50">
+			<tr>
+				<td><b>Requisition No:</b>&nbsp;&nbsp;&nbsp; {{singleReqNo}}</td>
+				<td></td><td></td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				Total Amount:&nbsp;&nbsp;<span style="color:blue">$</span> {{Total+addamt1}}   </td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Production Note:&nbsp;&nbsp;&nbsp;{{productNote}}</td>
+				<td colspan="2"></td><td ></td>
+				<td style="margin-left: 70px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				Customer Name:&nbsp;&nbsp;{{custName}}</td>
+			</tr>
+			<tr><td>Last Modified By:&nbsp;&nbsp;&nbsp;Admin</td><td colspan="2"></td>	<td></td><td>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			Last Modified Date:&nbsp;&nbsp;&nbsp;21-09-2017  4:15 PM</td></tr>
+		</table> -->
+<table align="center" width="100%" >
+<tr>
+<td><b>Requisition No:</b>&nbsp;&nbsp;&nbsp; {{singleReqNo}}</td>
+<td colspan="2">Customer Name:&nbsp;&nbsp;{{custName}}</td>
+<td>Last Modified By:&nbsp;&nbsp;&nbsp;Admin</td>
+</tr>
+<tr>
+<td style="border-bottom-color: yellowgreen;border-bottom-width: medium;">Total Amount:&nbsp;&nbsp;${{Total+addamt1}}</td>
+<td colspan="2" style="border-bottom-color: orange;border-bottom-width: medium;">Production Note:&nbsp;&nbsp;&nbsp;{{productNote}}</td>
+<td style="border-bottom-color: dodgerblue;border-bottom-width: medium;">Last Modified Date:&nbsp;&nbsp;&nbsp;21-09-2017  4:15 PM</td>
+</tr>
+</table>
+	</div>
+
+
+	<!-- <div>
+
+		
+
+		<br> <br>
+		<input type = "button" class = "btn" ng-click = "exportPdf()" style = "float: right"  value = "Export to Pdf">
+		<i class="fa fa-file-pdf-o fa-2x" aria-hidden="true" style = "float: right; cursor: pointer ;padding-left:25px;" ng-click = "exportPdf()"></i>
+		<input type = "button" class = "btn" ng-click = "exportExcel()" style = "float: right"  value = "Export to Excel">
+
+		Microsoft Excel icon by Icons8
+
+		<br> <br>
+	</div> -->
+
+
+	<!-- <select ng-model="registry" ng-dropdown required name = "tables">
+  <option ng-option value="allbyreqno" >All By Req Number</option>
+  <option ng-option value="unpaid" >Unpaid Invoices</option>
+  <option ng-option value="nonbilled" >Non Billed Progress</option>
+  
+</select> -->
+
+
+
+<div id="allbyreqno">
+
+
+	<!-- <i class="fa fa-plus-square-o fa-2x ic " aria-hidden="true" ng-click = "addPaymentLine2()" ></i> -->
+	<img class="icon ic icons8-Add-List" id="add" ng-click="addPaymentLine2()"
+		width="26" height="26"
+		src="data:image/png;base64,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">
+<px-tooltip for="add" delay="50" tooltip-message="Add a Payment Line" orientation="auto"> </px-tooltip>
+
+
+	&nbsp;&nbsp;&nbsp;
+<img class="icon icons8-Edit-Property fa-disabled modal-trigger" disabled
+		ng-click="editPaymentLine2()" id="edit" width="26" height="26"
+		src="data:image/png;base64,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">
+<px-tooltip for="edit" delay="50" tooltip-message="Edit a Payment Line" orientation="auto"></px-tooltip>
+	&nbsp;&nbsp;&nbsp;
+	<!-- <button class=" btn btn-large btn-default fa-disabled" id="delete" aria-hidden="true" disabled="true" ng-click = "deletePaymentLine()">Delete</button> -->
+	<!-- <i class="fa fa-trash-o fa-disabled fa-2x" id="delete" aria-hidden="true" disabled="true" ng-click = "deletePaymentLine()"></i> -->
+	<img class="icon icons8-Trash fa-disabled" id="delete"
+		ng-click="deletePaymentLine()" width="26" height="26"
+		src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAFOklEQVRoQ+2ab0xbVRTAz+MVSjV2lHXBSZ2wZC6AOgTNNsOWdWbLNlninHHDhA0EookxQqQbbi7BbIS6YuCLXyyz3Ui2+WcyI0ymcTXr4lhMGZptxOGAzSI00AFFaUv7WnOfaUOh797bP8jD+L41vfdxfvec87uX98rAf+RiAhz1NYYMlmMaGT+kLAY2PwPjHOuveldbOoDiDYLoqk/WJsukBzNWZyYvBpCB3rte11/OOk3D/to5ICnKlLfVO9WLIiOXvzGDfXj0/f9BxFJ2mIycqmQlzHGFMjVRLMHi4hizj3k5j0+jadjXFNIjjZWGFOcDzDFvou9NRdpyUbOM2YZA4kn4SDblf6+qqXQ8BAR9qKk3ZICE6y8ofBHkiqWihHGM2eFK23lwSVhFU9U/EHNAeBhds3/d1h2QKtKs3LcNQee3F0CrKQ9uHWFBDjUab6/MfnLV42vyRJmR2z93wUDPDcuxyv3PzAwwhIrPSMMJ82Orswtynl0nSpCbP3XC3V9vtWurywrxIDp9rUKZdmj99p2itNfVjq+nx0Zs9VpNBb+jC/bIAZ2+UiZ7UPv8y0VSMabk+8/PuN1O5xvaA2VGUkY2ATCmHcVlYuSACy0nAMCv1moqfsCDxFHBly7fgps9VnC7vZCTpQL1xmxIlkqiXiAh9Ya1VrwU3NpmgTt9tpCgH01PhT27o5eIkHoFQWJV8I0eK3R890vYlVdvyIL8pzOjyoqQeoUzEoOCXW4vtJw2w8SkMxisNEkC7mkv/1kqlUBFyeaoSkxIvZjSil7BvXdsYOnuB8ekExwOJzy3dhUP8OO13iBYTlY6bN+yJuKsCKlXECQeCraNOOCrdgvsK9rAr/7HRhMPFrheeWktrFBFdp4TUi8uI3FR8ITDCUvkMj72e1Y7fPbltZiyIqReYZAoFYyy4HZ7BFd6pskibXqcegVBIlUwanC98RK/X6Bmfuv1rWHrH437rW8YfrfaIS83E9KWyan7BKdeLEgkCkaNPLOZi4sKIgqShganXnxGKBWM+kBvNAVjkctlwQanCRDt/vm5mcFeEpqDUy+htOgUPHsH37blKXgiS4VlQCU2gvpp2gPn2yxAo2OcerEgNAqebSJVeirspTyCnDxthpHRSWod49RLyghRwagsurr5J5b8FcneMHsR8nIzYPPGbMFM4tSLB6FQ8NlznWAdvB/2jy9TPgR7dq8PHkVw5y90A1w2SerFgtAo2HK9H0zmnrAgM82Fji1ol8dduH2FpF4iCI2ChbKCzliBcxZq7k/PXQ3piZlQpGYnqZcIQvsgAtV7uBJDm17gHykE09XdPycpqKRIZy6SeskgInkQQVIvEYRGwTSbXqxjSOolgtTo9EQFxxokzXySeskgFAqmCSSWMTTqJYLQKDiWIGnm0qiXCoRGwTQBRTuGRr1UILQKjjZQ0jwa9dKBLLCCadRLBbLQCqZRLxXIkbrmvRIPe0b58MK8jhsdHgJvIld09HD5WVwZznk/Mntw3ZFPypNcrF6+dAlHquf5+N5hn2Cnk7mKw0dfa44JRFdt2ARMgmlXya75iJN4z1ZjK4Dfp9Y0lIY8fZ89kZiR4xpDLgMJ1wtfLYTEpH/33c/Un1Nw8YuL4GV9mYHfnAiRE0HQxA8PtvyhWqlanl+QT1zBeA6wXLGAtc869M4HxY+Q7ksFwpcXm9AuT5FL01eks6SbxuP7wXuDnGPc4QbO9wKprKisFQgK/QxK4k0oYRPZbSzLzusviDiOc3EersMr8RlJJRWIjyoj8Vjh+b7H35Rw91HH99m7AAAAAElFTkSuQmCC">
+
+<px-tooltip for="delete" delay="50" tooltip-message="Delete a Payment Line" orientation="auto"></px-tooltip>
+	
+	
+	
+
+	
+	<img class="icon icons8-Microsoft-Excel" ng-click="exportExcel()" id="excel"
+		style="float: right; cursor: pointer" width="26" height="26"
+		src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACu0lEQVRoQ+2ZMWzTQBSG/2dolIFIjIWhQqpEUCLROLCwkTGFIsIAatkAtdAJUalb1IhsSI2YWqgETBTUgUY0qGPYGGgLhQVYYKEwVgpDhVCMnoOPq+uE2EnrM/ItSZw7+//e+987yyYEfFDA9SME8DuDYQb+1wxQYirdv+9XXSci3SCkANLfF9cOdRu4YwslC8kIfvYkNE3TAUMnkG4AA0SI2cW+K651fD37OV2dMD4Zj+3viQ4QaaZQgsHRTRAo0k5k9xQgWUj2avWIbtSNFAvm6MJAPxG5gpbB9hTgeD5ttBNVN3P60n1upou5BvD2Ra6sOy1uGk2VAFh4JVd21BoCuPGEVwuFGXAT5VZz12+vir+Hyjnz+9L5xaZLrDnKZMBXgMunRjCZnRDRyi8W8PzNkvgdix7A8q0KYtHGBnxneRqPX81vi66vAKyEBR4+2Lid+bq5gcHSkBDIcAzJ4+P3T7g4M7zDGr4X8ckjJ/DgypwQdvXhKFa+rJpQDGcN67idwHcAFnR3ZBqZY6dNba8/r+DaozEUcwWc0xvZYFuxvZyG7xZiUfZo35yfMKF41LZ+IFs6Y34qC8DCbmTGcD0z+kd0rWXhyiBKZIAFccdZGH8qCrpV4coAStSABSC3TKsrXZoZbmofnqMMgNwyNza/iUzcq85htnrf0f98UAkLya2UizX/bEoUMYvMls6CoZQtYnkzsyLOewODya1VSYDt3edvy7RvcNxaqx9e7mDwtQbivUexMP5EiLL7Xd7Mals100r2/cBXANkm7HEWKA/7Bsc3cnxDp+Q+0LTN/OMPJbqQV/HKtNFOAHytgU6EW2tDAIcohs+F3FjLs4UMrFculFNO12qagcA/3HWiDdTj9XatEagXHO1CAQjOKyYXULsy1fPbll1R4+GkIYCHoHV1SZiBrobTw8l+Ay2Al0BP3OV8AAAAAElFTkSuQmCC">
+	<px-tooltip for="excel" delay="50" tooltip-message="Export to Excel" orientation="auto"></px-tooltip>
+	
+	<img class="icon icons8-PDF" ng-click="exportPdf()" id="pdf"
+		style="float: right; cursor: pointer" width="26" height="26"
+		src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACf0lEQVRoQ+2ZPUhbURiG34CTpW5OCkrFwWwFRad2aqFKJwOKi2iXFvxZrO1QpIpLxMUoti6Ki/hXp2qpTloKig4ujYMoLehSN0UnIeX1cLhpSHK559yTkyv3g0Auubnne773/c5PEkHAIxLw/HH/AVJtj1JGVEphOLJ8+lH32a4KGAGoqAXOjwEfIKwA3Ma/oyTR4wuEHYDET+DmCiWTvdoQ9gBofh8g7AL4AGEfQBOiOAA0IIoHQBGiuAAUIIoPIAMisnSaN0crAF62DyGAkb2QBwlCBZQUqKoD3owBD8qA1QSw/cVDzf+/1Y4CkztAeYWTSe8T4OJcCcIOwOKJSDa5B0QbgZEO8V4h7ADMHgKlD4E/RwDtFDiAgc9A/TOn3oEDeNEFdH5wANprFMwjvmLHQrTP1A9hI3qfCiiGHQAmy2n0aSvwOwm8f6mYvi0FmG76VDo/CnybU4KwowBnnvjXuzPvnY2uLwGuBbz2GHYApH1Y9fJKMSPRSuwFjxCFB2DFaR9uI1h1Vj++Llbm5C6wMgFURwVYdR3w90w0+s5aVm0KDxDrB2J9zuxDO/G64Xl+81At9kpGFB5ArsKsNqvMV65Iv4dKvXpsGUBWPz0NbuIONoFfe8JCzd1Ckcw42ALGX1sCYJNy5ZXVZqPubwIbc2I/lBnsh6qo6AXGxZm4P0uDm7UQ/c3Eo01Oiqzk9FvPs00ul5kDYPJDC2K2kcEKvmtR3vtngzAHIFdaelweXj4Nap2+CgsgZxs5Ko+OqxMe11n3280pwJPWwIxYqNisinsdNwRzAG4j+/R5CKD0s4pP1edjQgVCBTTtpG0hzfGNf931/wHjGWgOEHiAfyYahUCfR0gSAAAAAElFTkSuQmCC">
+<px-tooltip for="pdf" delay="50" tooltip-message="Export to PDF" orientation="left"></px-tooltip>
+<!-- <div id="errormsgr" style="display:none"><px-alert-message  id="alert3" type="error" message-title="" message={{errorMsg}} auto-dismiss="5000" action="acknowledge" language="en"></px-alert-message></div> -->
+
+	
+
+	<br />
+	<px-data-table id="billingregistry"  table-data='{{billingRegistrySingledata}}' language="en" selectable striped editable
+		filterable="true"> 
+	<px-data-table-column  id="duedate"
+		name="duedate" label="Due Date" type="html" filterable sortable></px-data-table-column>
+	<px-data-table-column  name="fe" label="FE" id="fec" type="html"  sortable
+		filterable /></px-data-table-column> 
+	<px-data-table-column name="amount" label="Amount"
+		type="html" sortable filterable></px-data-table-column> 
+	<px-data-table-column
+		name="currency" label="Currency" id = "currencyc" type="html"sortable filterable></px-data-table-column>
+	<px-data-table-column id="description" name="description"
+		label="Description" type="html" filterable sortable></px-data-table-column>
+	<px-data-table-column name="status" label="Status" type="html" sortable
+		filterable /></px-data-table-column> <px-data-table-column name="issuedate"
+		label="Issue Date" type="html" sortable filterable /></px-data-table-column> <px-data-table-column
+		name="invoiceno" label="Invoice No" type="html" sortable filterable /></px-data-table-column>
+	<px-data-table-column name="shoporder" label="Shop Order" type="html"
+		sortable filterable /></px-data-table-column> 
+	<px-data-table-column name="payment" label="Payment" type="html"
+		sortable filterable /></px-data-table-column>
+	<px-data-table-column name="func" label="Func" type="html" sortable
+		filterable /></px-data-table-column>
+		<px-data-table-column name="mile" label="MILE" type="html" sortable
+		filterable /></px-data-table-column>
+		</px-data-table>
+		<div id="note" style="color:blue"><span style="color:red;">*</span>The fields bounded with Red color are mandatory fields</div>
+				<!-- <div id="errormsg" style="display:none"><px-alert-message  id="alert3" type="error" message-title="" message={{errorMsg}} auto-dismiss="5000" action="acknowledge" language="en"></px-alert-message></div> -->
+<div id="serviceFail" style="display:none"><px-alert-message id="alert4" type="warning" message-title="" message={{serviceFail}} auto-dismiss="5000" action="acknowledge" language="en"></px-alert-message></div>
+<!-- <div id="successmsg" style="display:none"><px-alert-message  id="alert5" type="information" message-title="" message={{successMsg}} auto-dismiss="5000" action="acknowledge" language="en"></px-alert-message></div> -->
+	<br>
+</div>
+		
+		
+	
+		
+	<input type="button" id="save" class="savebtn modal-trigger" ng-click="addPaymentLine()" value="save">
+		<input type="button" id="update" class="savebtn"
+		ng-click="editPaymentLine()" value="update">
+		 <input type="button" id="cancelAdd" class="cancelbtn"
+		ng-click="cancel()" value="cancel"> 
+		<input type="button" id="cancelup" class="cancelbtn"
+		ng-click="cancelupdate()" value="cancel"> 
+		 
+		<br> <br>
+
+
+
+
+</px-card>
+
+
+<style>
+.form-style-3 label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.form-style-3 label>span {
+	float: left;
+	width: 35%;
+	color: #525156;
+	font-weight: bold;
+	font-size: 13px;
+	text-shadow: 1px 1px 1px #fff;
+}
+
+.form-style-3 fieldset {
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	margin: 0px 0px 10px 0px;
+	border: 1px solid #d8e0e5;
+	padding: 20px;
+	background: #fff;
+	box-shadow: inset 0px 0px 15px #FFE5E5;
+	-moz-box-shadow: inset 0px 0px 15px #FFE5E5;
+	-webkit-box-shadow: inset 0px 0px 100px #d8e0e5;
+}
+
+.form-style-3 fieldset legend {
+	color: #7c7c84;
+	border-top: 1px solid #d1d0d9;
+	border-left: 1px solid #d1d0d9;
+	border-right: 1px solid #d1d0d9;
+	border-radius: 5px 5px 0px 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
+	background: #FFF4F4;
+	padding: 0px 8px 3px 8px;
+	box-shadow: 0px -1px 2px #F1F1F1;
+	-moz-box-shadow: -0px -1px 2px #F1F1F1;
+	-webkit-box-shadow: 0px -1px 2px #F1F1F1;
+	font-weight: normal;
+	font-size: 12px;
+}
+
+.form-style-3 textarea {
+	width: 250px;
+	height: 100px;
+}
+
+.form-style-3 input[type=text], .form-style-3 input[type=date],
+	.form-style-3 input[type=datetime], .form-style-3 input[type=number],
+	.form-style-3 input[type=search], .form-style-3 input[type=time],
+	.form-style-3 input[type=url], .form-style-3 input[type=email],
+	.form-style-3 select, .form-style-3 textarea {
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border: 1px solid #d8e0e5;
+	outline: none;
+	color: #525156;
+	padding: 5px 8px 5px 8px;
+	box-shadow: inset 1px 1px 4px #FFD5E7;
+	-moz-box-shadow: inset 1px 1px 4px #FFD5E7;
+	-webkit-box-shadow: inset 1px 1px 30px #d8e0e5;
+	/* background: #FFEFF6; */
+	width: 80%;
+}
+
+.required {
+	color: red;
+	font-weight: normal;
+}
+
+.sizebar {
+	width: 90px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border: 1px solid #d8e0e5;
+	outline: none;
+	color: #525156;
+	padding: 5px 8px 5px 8px;
+	box-shadow: inset 1px 1px 4px #FFD5E7;
+	-moz-box-shadow: inset 1px 1px 4px #FFD5E7;
+	-webkit-box-shadow: inset 1px 1px 30px #d8e0e5;
+	/* background: #FFEFF6; */
+	
+}
+.sizebar1 {
+	width: 90px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border: 2px solid #d8492f;
+	outline: none;
+	color: #525156;
+	padding: 5px 8px 5px 8px;
+	box-shadow: inset 1px 1px 4px #FFD5E7;
+	-moz-box-shadow: inset 1px 1px 4px #FFD5E7;
+	-webkit-box-shadow: inset 1px 1px 30px #d8e0e5;
+	/* background: #FFEFF6; */
+	
+}
+.custom-icon { -
+	-iron-icon-width: 50px; -
+	-iron-icon-height: 50px;
+	color: black;
+	disabled
+}
+
+.custom-icon:hover { -
+	-iron-icon-width: 50px; -
+	-iron-icon-height: 50px;
+	color: skyblue;
+}
+
+.fa-disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.ic:hover {
+	font-size: 150%;
+	cursor: pointer;
+}
+.hide{
+
+display:none;
+}
+
+.rightpane {
+	width: 50%;
+	height: 25%;
+	float: right;
+	border-collapse: collapse;
+}
+
+.leftpane {
+	width: 50%;
+	height: 25%;
+	float: left;
+	border-collapse: collapse;
+}
+
+.dropdown {
+	width: 25%;
+	float: right;
+}
+
+.main-card {
+	height: 600px;
+}
+
+.savebtn {
+	 background-color: #008CBA;; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 6px;
+    
+}
+
+.cancelbtn {
+	 background-color: #d65433;
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 6px;
+   
+}
+
+
+.savebtn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.cancelbtn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.image:hover {
+
+ width: 55px ;
+ height: 55px;
+}
+.data-column{
+
+width:100%;
+
+}
+
+
+
+
+
+
+.aha-table-0 .table.aha-table{
+width:120%;
+}
+ .breadcrumb a {
+	text-decoration: none;
+	outline: none;
+	display: block;
+	float: left;
+	font-size: 12px;
+	line-height: 36px;
+	color: #f7f7fc;
+	padding: 0 10px 0 60px;
+	background: #666;
+	height: 34px;
+	background: linear-gradient(#666, #333);
+	position: relative;
+}
+
+/* .breadcrumb a:first-child {
+	padding-left: 46px;
+	border-radius: 5px 0 0 5px; 
+}
+.breadcrumb a:first-child:before {
+	left: 14px;
+} */
+
+
+.breadcrumb a.active, .breadcrumb a:hover{
+	background: #333;
+	background: linear-gradient(rgba(100, 192, 214, 0.68), #253133);
+
+}
+.breadcrumb a.active:after, .breadcrumb a:hover:after {
+	background: #333;
+	background: linear-gradient(rgba(100, 192, 214, 0.68), #253133);
+}
+
+.breadcrumb a:after {
+	content: '';
+	position: absolute;
+	top: 0; 
+	right: -18px; 
+	width: 36px; 
+	height: 34px;
+	transform: scale(0.707) rotate(45deg);
+	z-index: 1;
+	background: #666;
+	background: linear-gradient(135deg, #666, #333);
+	box-shadow: 
+		2px -2px 0 2px rgba(0, 0, 0, 0.4), 
+		3px -3px 0 2px rgba(255, 255, 255, 0.1);
+	
+	border-radius: 0 5px 0 50px;
+}
+.aha-table-0 .table.aha-table{
+
+/* padding-right:75px; */
+/* width:20px; */
+
+}
+.aha-_selected-th{
+width:30px !important; 
+}
+
+.aha-duedate-td{
+width: 150px;
+
+}
+
+.aha-fe-th{
+width: 120px;
+}
+
+.aha-currency-th{
+width: 60px;
+}
+.aha-invoiceno-td{
+width: 85px;
+}
+.aha-shoporder-td{
+width: 90px;
+}
+.aha-description-th{
+width: 150px;
+}
+
+.aha-issuedate-th{
+width: 150px;
+
+}
+table, td {
+       background-color: #393F46;
+       color:white;
+    border-collapse: collapse;
+    border: 1px solid #999; 
+
+}
+td{
+padding:6px;
+}
+/* .input-symbol-euro {
+    position: relative;
+    color:red;
+}
+.input-symbol-euro input {
+    padding-left:18px;
+}
+.input-symbol-euro:before {
+    position: absolute;
+    top: 0;
+    content:"*";
+    left: 5px;
+} */
+
+</style>
+

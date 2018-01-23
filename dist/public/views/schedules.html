@@ -1,0 +1,36 @@
+<px-card></px-card>
+
+
+<px-card class = "main-card" >
+
+<br>
+<input class = "btn" type = "button" value = "Delete" ng-click = "deleteSchedule()">
+<br>
+ <div id="table" >
+    
+		 
+		 <px-data-table  id = "schedulesDatatable" table-data='{{schedulesData}}' language="en" selectable  filterable="true" stripped>
+			<px-data-table-column id="reqno" name="reqno" label="Requestion Number" type="html"  sortable filterable/></px-data-table-column>
+		    <px-data-table-column id="item" name="item" label="Item" type="html" sortable filterable></px-data-table-column>
+		    <px-data-table-column name="customerName" label="Customer Name" type="html"  sortable filterable/>
+		    </px-data-table-column>
+		</px-data-table> 
+	</div> 
+
+
+
+
+
+
+
+</px-card>
+
+
+<style>
+.main-card{
+
+height : 500px;
+
+}
+
+</style>

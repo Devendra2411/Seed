@@ -1,0 +1,110 @@
+
+    <px-card header-text="" class = "main-card">
+    
+    <br>
+    <i class="fa fa-chevron-left backbtn" aria-hidden="true" ng-click="goback()"></i>&nbsp;<span style="cursor:pointer;" ng-click="goback()"><i><u>Back</u></i></span>
+    <div style="font-size:medium;text-align:center"><b><u>Reports</u></b></div>
+    
+    <div style="float: right">
+    <br>
+        <px-dropdown display-value="Billing registry Descrpencies" id="registry"
+			class="dropdown" ng-model="dropdown"> <px-dropdown-content
+			extend-dropdown='true' extend-dropdown-by='25'
+			max-cont-character-width='10'
+			items='[{"key":"1","val":"Billing registry Descrpencies"},
+  {"key":"2","val":"Unpaid Invoices"},
+  {"key":"3","val":"Non-Billed Progress"}]'>
+		</px-dropdown-content> <!-- 
+   {"key":"3","val":"Integration List"},
+  {"key":"4","val":"Asset Management"},
+  {"key":"5","val":"Maintenance","disabled":true}] --> </px-dropdown>
+  
+    
+    </div>
+    
+    
+    <div id="descrepencies" >
+    <br><br><br><br>
+		 
+		 <px-data-table  table-data='{{billingRegistryReports}}'
+language="en"  filterable="true">
+			<px-data-table-column id="fmTablebookMarkOpty" name="reqNo" label="Requisition No" type="html"  sortable filterable/></px-data-table-column>
+		    <px-data-table-column id="fmTableRevision" name="comm_totalAmount" label="Comm. Total Amount" type="html" sortable filterable></px-data-table-column>
+		    <px-data-table-column name="p_billingTotal" label="P-billing Total" type="html"  sortable filterable/></px-data-table-column>
+		    <px-data-table-column name="difference" label="Difference" type="html"  sortable filterable></px-data-table-column>
+		    <px-data-table-column name="booked" label="Booked" type="html"  sortable filterable/></px-data-table-column>
+		
+		</px-data-table> 
+	</div> 
+	<div id="unpaid">
+	 <br><br><br><br>
+	
+	
+	Total Amount: <!-- <img class="icon icons8-Microsoft-Excel"
+		ng-click="exportExcel()" style="float: right; cursor: pointer"
+		width="26" height="26"
+		src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACu0lEQVRoQ+2ZMWzTQBSG/2dolIFIjIWhQqpEUCLROLCwkTGFIsIAatkAtdAJUalb1IhsSI2YWqgETBTUgUY0qGPYGGgLhQVYYKEwVgpDhVCMnoOPq+uE2EnrM/ItSZw7+//e+987yyYEfFDA9SME8DuDYQb+1wxQYirdv+9XXSci3SCkANLfF9cOdRu4YwslC8kIfvYkNE3TAUMnkG4AA0SI2cW+K651fD37OV2dMD4Zj+3viQ4QaaZQgsHRTRAo0k5k9xQgWUj2avWIbtSNFAvm6MJAPxG5gpbB9hTgeD5ttBNVN3P60n1upou5BvD2Ra6sOy1uGk2VAFh4JVd21BoCuPGEVwuFGXAT5VZz12+vir+Hyjnz+9L5xaZLrDnKZMBXgMunRjCZnRDRyi8W8PzNkvgdix7A8q0KYtHGBnxneRqPX81vi66vAKyEBR4+2Lid+bq5gcHSkBDIcAzJ4+P3T7g4M7zDGr4X8ckjJ/DgypwQdvXhKFa+rJpQDGcN67idwHcAFnR3ZBqZY6dNba8/r+DaozEUcwWc0xvZYFuxvZyG7xZiUfZo35yfMKF41LZ+IFs6Y34qC8DCbmTGcD0z+kd0rWXhyiBKZIAFccdZGH8qCrpV4coAStSABSC3TKsrXZoZbmofnqMMgNwyNza/iUzcq85htnrf0f98UAkLya2UizX/bEoUMYvMls6CoZQtYnkzsyLOewODya1VSYDt3edvy7RvcNxaqx9e7mDwtQbivUexMP5EiLL7Xd7Mals100r2/cBXANkm7HEWKA/7Bsc3cnxDp+Q+0LTN/OMPJbqQV/HKtNFOAHytgU6EW2tDAIcohs+F3FjLs4UMrFculFNO12qagcA/3HWiDdTj9XatEagXHO1CAQjOKyYXULsy1fPbll1R4+GkIYCHoHV1SZiBrobTw8l+Ay2Al0BP3OV8AAAAAElFTkSuQmCC">
+	<img class="icon icons8-PDF" ng-click="exportPdf()"
+		style="float: right; cursor: pointer" width="26" height="26"
+		src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACf0lEQVRoQ+2ZPUhbURiG34CTpW5OCkrFwWwFRad2aqFKJwOKi2iXFvxZrO1QpIpLxMUoti6Ki/hXp2qpTloKig4ujYMoLehSN0UnIeX1cLhpSHK559yTkyv3g0Auubnne773/c5PEkHAIxLw/HH/AVJtj1JGVEphOLJ8+lH32a4KGAGoqAXOjwEfIKwA3Ma/oyTR4wuEHYDET+DmCiWTvdoQ9gBofh8g7AL4AGEfQBOiOAA0IIoHQBGiuAAUIIoPIAMisnSaN0crAF62DyGAkb2QBwlCBZQUqKoD3owBD8qA1QSw/cVDzf+/1Y4CkztAeYWTSe8T4OJcCcIOwOKJSDa5B0QbgZEO8V4h7ADMHgKlD4E/RwDtFDiAgc9A/TOn3oEDeNEFdH5wANprFMwjvmLHQrTP1A9hI3qfCiiGHQAmy2n0aSvwOwm8f6mYvi0FmG76VDo/CnybU4KwowBnnvjXuzPvnY2uLwGuBbz2GHYApH1Y9fJKMSPRSuwFjxCFB2DFaR9uI1h1Vj++Llbm5C6wMgFURwVYdR3w90w0+s5aVm0KDxDrB2J9zuxDO/G64Xl+81At9kpGFB5ArsKsNqvMV65Iv4dKvXpsGUBWPz0NbuIONoFfe8JCzd1Ckcw42ALGX1sCYJNy5ZXVZqPubwIbc2I/lBnsh6qo6AXGxZm4P0uDm7UQ/c3Eo01Oiqzk9FvPs00ul5kDYPJDC2K2kcEKvmtR3vtngzAHIFdaelweXj4Nap2+CgsgZxs5Ko+OqxMe11n3280pwJPWwIxYqNisinsdNwRzAG4j+/R5CKD0s4pP1edjQgVCBTTtpG0hzfGNf931/wHjGWgOEHiAfyYahUCfR0gSAAAAAElFTkSuQmCC">
+ -->
+	<br>
+	<br>
+	<px-data-table id="billingregistry" table-data='{{}}' language="en"
+		selectable filterable="true" stripped> <px-data-table-column
+		id="fmTablebookMarkOpty" name="reqno" label="Req No" type="html"
+		sortable filterable /></px-data-table-column> <px-data-table-column id="fmTableRevision"
+		name="description" label="Issue Date" type="html" sortable filterable></px-data-table-column>
+	<px-data-table-column name="reqNo" label="F/E" type="html" sortable
+		filterable /></px-data-table-column> <px-data-table-column name="en" label="Amount"
+		type="html" sortable filterable></px-data-table-column> <px-data-table-column
+		name="customername" label="Customer Name" type="html" sortable
+		filterable /></px-data-table-column> <px-data-table-column name="duedate" label="Due Date"
+		type="html" sortable filterable /></px-data-table-column> <px-data-table-column name="pr"
+		label="P.R" type="html" sortable filterable /></px-data-table-column> <px-data-table-column
+		name="shoporder" label="Shop Order" type="html" sortable filterable /></px-data-table-column>
+	</px-data-table>
+
+</div>
+
+<div id="nonbilled">
+
+ <br><br><br><br>
+
+	Total Amount: <!-- <img class="icon icons8-Microsoft-Excel"
+		ng-click="exportExcel()" style="float: right; cursor: pointer"
+		width="26" height="26"
+		src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACu0lEQVRoQ+2ZMWzTQBSG/2dolIFIjIWhQqpEUCLROLCwkTGFIsIAatkAtdAJUalb1IhsSI2YWqgETBTUgUY0qGPYGGgLhQVYYKEwVgpDhVCMnoOPq+uE2EnrM/ItSZw7+//e+987yyYEfFDA9SME8DuDYQb+1wxQYirdv+9XXSci3SCkANLfF9cOdRu4YwslC8kIfvYkNE3TAUMnkG4AA0SI2cW+K651fD37OV2dMD4Zj+3viQ4QaaZQgsHRTRAo0k5k9xQgWUj2avWIbtSNFAvm6MJAPxG5gpbB9hTgeD5ttBNVN3P60n1upou5BvD2Ra6sOy1uGk2VAFh4JVd21BoCuPGEVwuFGXAT5VZz12+vir+Hyjnz+9L5xaZLrDnKZMBXgMunRjCZnRDRyi8W8PzNkvgdix7A8q0KYtHGBnxneRqPX81vi66vAKyEBR4+2Lid+bq5gcHSkBDIcAzJ4+P3T7g4M7zDGr4X8ckjJ/DgypwQdvXhKFa+rJpQDGcN67idwHcAFnR3ZBqZY6dNba8/r+DaozEUcwWc0xvZYFuxvZyG7xZiUfZo35yfMKF41LZ+IFs6Y34qC8DCbmTGcD0z+kd0rWXhyiBKZIAFccdZGH8qCrpV4coAStSABSC3TKsrXZoZbmofnqMMgNwyNza/iUzcq85htnrf0f98UAkLya2UizX/bEoUMYvMls6CoZQtYnkzsyLOewODya1VSYDt3edvy7RvcNxaqx9e7mDwtQbivUexMP5EiLL7Xd7Mals100r2/cBXANkm7HEWKA/7Bsc3cnxDp+Q+0LTN/OMPJbqQV/HKtNFOAHytgU6EW2tDAIcohs+F3FjLs4UMrFculFNO12qagcA/3HWiDdTj9XatEagXHO1CAQjOKyYXULsy1fPbll1R4+GkIYCHoHV1SZiBrobTw8l+Ay2Al0BP3OV8AAAAAElFTkSuQmCC">
+	<img class="icon icons8-PDF" ng-click="exportPdf()"
+		style="float: right; cursor: pointer" width="26" height="26"
+		src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACf0lEQVRoQ+2ZPUhbURiG34CTpW5OCkrFwWwFRad2aqFKJwOKi2iXFvxZrO1QpIpLxMUoti6Ki/hXp2qpTloKig4ujYMoLehSN0UnIeX1cLhpSHK559yTkyv3g0Auubnne773/c5PEkHAIxLw/HH/AVJtj1JGVEphOLJ8+lH32a4KGAGoqAXOjwEfIKwA3Ma/oyTR4wuEHYDET+DmCiWTvdoQ9gBofh8g7AL4AGEfQBOiOAA0IIoHQBGiuAAUIIoPIAMisnSaN0crAF62DyGAkb2QBwlCBZQUqKoD3owBD8qA1QSw/cVDzf+/1Y4CkztAeYWTSe8T4OJcCcIOwOKJSDa5B0QbgZEO8V4h7ADMHgKlD4E/RwDtFDiAgc9A/TOn3oEDeNEFdH5wANprFMwjvmLHQrTP1A9hI3qfCiiGHQAmy2n0aSvwOwm8f6mYvi0FmG76VDo/CnybU4KwowBnnvjXuzPvnY2uLwGuBbz2GHYApH1Y9fJKMSPRSuwFjxCFB2DFaR9uI1h1Vj++Llbm5C6wMgFURwVYdR3w90w0+s5aVm0KDxDrB2J9zuxDO/G64Xl+81At9kpGFB5ArsKsNqvMV65Iv4dKvXpsGUBWPz0NbuIONoFfe8JCzd1Ckcw42ALGX1sCYJNy5ZXVZqPubwIbc2I/lBnsh6qo6AXGxZm4P0uDm7UQ/c3Eo01Oiqzk9FvPs00ul5kDYPJDC2K2kcEKvmtR3vtngzAHIFdaelweXj4Nap2+CgsgZxs5Ko+OqxMe11n3280pwJPWwIxYqNisinsdNwRzAG4j+/R5CKD0s4pP1edjQgVCBTTtpG0hzfGNf931/wHjGWgOEHiAfyYahUCfR0gSAAAAAElFTkSuQmCC">
+ -->
+	<br> <br />
+
+	<px-data-table id="billingregistry" table-data='{{}}' language="en"
+		selectable striped filterable="true" stripped> <px-data-table-column
+		id="fmTablebookMarkOpty" name="duedate" label="Due Date" type="html"
+		sortable filterable /></px-data-table-column> <px-data-table-column id="fmTableRevision"
+		name="description" label="Description" type="html" sortable filterable></px-data-table-column>
+	<px-data-table-column name="reqNo" label="FE" type="html" sortable
+		filterable /></px-data-table-column> <px-data-table-column name="en" label="Amount"
+		type="html" sortable filterable></px-data-table-column> <px-data-table-column
+		name="customerName" label="Status" type="html" sortable filterable /></px-data-table-column>
+	<px-data-table-column name="customerPo" label="Issue Date" type="html"
+		sortable filterable /></px-data-table-column> <px-data-table-column name="drno"
+		label="Invoice No" type="html" sortable filterable /></px-data-table-column> <px-data-table-column
+		name="drno" label="Shop Order" type="html" sortable filterable /></px-data-table-column> </px-data-table>
+
+</div>
+	</px-card>
+	
+	
+	
+	<style>
+	
+	.main-card{
+	
+	height: 500px;
+	}
+	
+	</style>
