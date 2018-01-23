@@ -1,0 +1,150 @@
+/*
+ * Copyright (c) 2014 GE Global Research. All rights reserved.
+ *
+ * The copyright to the computer software herein is the property of
+ * GE Global Research. The software may be used and/or copied only
+ * with the written permission of GE Global Research or in accordance
+ * with the terms and conditions stipulated in the agreement/contract
+ * under which the software has been supplied.
+ */
+
+// Generic
+@import "px-normalize-design/_generic.normalize.scss";
+@import "px-box-sizing-design/_generic.box-sizing.scss";
+@import "px-helpers-design/_generic.helpers.scss";
+
+// Base
+@import "px-headings-design/_base.headings.scss";
+
+// Objects
+$inuit-enable-btn--call-to-action  : true;
+$inuit-enable-btn--disabled        : true;
+@import "px-buttons-design/_objects.buttons.scss";
+@import "px-shadows-design/_objects.shadows.scss";
+
+// Components
+:host {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  background-color: transparent;
+  opacity: 0;
+  transition: background-color 0.3s cubic-bezier(.78,.13,.16,.87),
+              visibility 0.3s cubic-bezier(.78,.13,.16,.87),
+              opacity 0.3s cubic-bezier(.78,.13,.16,.87);
+  @include media-query(palm) {
+    position: initial;
+    width: 100%;
+    height: 100%;
+  }
+}
+:host([opened]) > .modal {
+  visibility: visible;
+  background-color: var(--px-modal-overlay-color, rgba(black, 0.65));
+  opacity: 1;
+  pointer-events: auto;
+}
+:host([fill-container]) > .modal {
+  position: initial;
+  width: 100%;
+  height: 100%;
+}
+
+.modal__box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translate(-50%, -50%);
+  max-height: calc(100% - 2rem);
+  max-width: calc(100% - 2rem);
+  overflow: visible;
+  white-space: normal;
+  word-wrap: break-word;
+  background-color: var(--px-modal-background-color, white);
+  color: var(--px-modal-text-color, black);
+  @include media-query(palm) {
+    width: 100%;
+    position: initial;
+    transform: initial;
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    box-shadow: none;
+  }
+  @include media-query(lap-and-up){
+    min-width: calculateRem(400px);
+  }
+}
+
+:host([fill-container]) .modal__box {
+  position: initial;
+  transform: initial;
+  height: 100%;
+  width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  overflow: auto;
+  box-shadow: none;
+  background-color: var(--px-modal-background-color--container, white);
+  color: var(--px-modal-text-color--container, black);
+}
+
+.modal__header__text {
+  display: block;
+  padding: $inuit-base-spacing-unit--large;
+  @include media-query(palm) {
+    text-align: center;
+    box-shadow: 0px 2px 4px var(--px-shadow-navigation, rgba(black, 0.2));
+  }
+}
+:host([fill-container]) .modal__header__text {
+  padding: $inuit-base-spacing-unit--huge;
+}
+
+.modal__body__text {
+  display: block;
+  padding: 0 $inuit-base-spacing-unit--large;
+  @include media-query(palm) {
+    padding: $inuit-base-spacing-unit--large;
+  }
+  max-height: calc(100vh - 10rem);
+  overflow: auto;
+}
+:host([fill-container]) .modal__body__text {
+  padding: $inuit-base-spacing-unit--huge;
+}
+
+.modal__triggers {
+  display: flex;
+  justify-content: flex-end;
+  padding: $inuit-base-spacing-unit--large;
+  @include media-query(palm) {
+    justify-content: space-between;
+    box-shadow: 0px -2px 4px var(--px-shadow-navigation, rgba(black, 0.2));
+    background-color: var(--px-modal-contrast-background-color, #ebeff2);
+  }
+}
+
+:host([fill-container]) .modal__triggers {
+  box-shadow: 0px -2px 4px var(--px-shadow-navigation, rgba(black, 0.2));
+  padding: $inuit-base-spacing-unit--huge;
+  flex: 0 0 auto;
+}
+
+.modal__reject-trigger {
+  margin-right: $inuit-base-spacing-unit;
+}

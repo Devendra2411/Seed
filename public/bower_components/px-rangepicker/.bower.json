@@ -1,0 +1,38 @@
+{
+  "name": "px-rangepicker",
+  "version": "0.0.13",
+  "main": [
+    "px-rangepicker.html"
+  ],
+  "ignore": [
+    ".*",
+    "npm-debug.log",
+    "Gruntfile.js",
+    "sass",
+    "bower_components",
+    "node_modules",
+    "test"
+  ],
+  "dependencies": {
+    "moment": "~2.10.6",
+    "polymer": "~1.0.0",
+    "px-theme": "git://github.build.ge.com/PXc/px-theme.git#~0.3.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#~v1.0.0",
+    "px-buttons-design": "https://github.com/PredixDev/px-buttons-design.git#~0.4.0",
+    "px-forms-design": "git://github.build.ge.com/PXd/px-forms-design.git#~0.3.0",
+    "px-list-bare-design": "git://github.build.ge.com/PXd/px-list-bare-design.git#~0.2.0",
+    "px-starter-kit-design": "git://github.build.ge.com/PXd/px-starter-kit-design.git#~0.4.0",
+    "px-tables-design": "git://github.build.ge.com/PXd/px-tables-design.git#~0.3.0"
+  },
+  "_release": "0.0.13",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.13",
+    "commit": "46cf2518a78f694be5daf371856b9347ec3e16b3"
+  },
+  "_source": "https://github.build.ge.com/PXc/px-rangepicker.git",
+  "_target": "~v0.0.8",
+  "_originalSource": "https://github.build.ge.com/PXc/px-rangepicker.git"
+}

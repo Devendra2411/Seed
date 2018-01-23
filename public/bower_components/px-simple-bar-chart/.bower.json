@@ -1,0 +1,35 @@
+{
+  "name": "px-simple-bar-chart",
+  "main": [
+    "px-simple-bar-chart.html"
+  ],
+  "ignore": [
+    ".*",
+    "npm-debug.log",
+    "Gruntfile.js",
+    "sass",
+    "bower_components",
+    "node_modules",
+    "test"
+  ],
+  "dependencies": {
+    "polymer": "~1.1.3",
+    "px-theme": "https://github.build.ge.com/PXc/px-theme.git#~0.2.0",
+    "d3": "~3.5.6",
+    "iron-ajax": "PolymerElements/iron-ajax#~1.0.4"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#~v1.0.0",
+    "px-starter-kit-design": "https://github.build.ge.com/PXd/px-starter-kit-design.git#~0.4.0",
+    "px-slider": "https://github.build.ge.com/PXc/px-slider.git#~0.0.4"
+  },
+  "_release": "a31f18e369",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "a31f18e36914839a3ef3c71b433463fbd8c74033"
+  },
+  "_source": "https://github.build.ge.com/PXc/px-simple-bar-chart.git",
+  "_target": "master",
+  "_originalSource": "https://github.build.ge.com/PXc/px-simple-bar-chart.git"
+}

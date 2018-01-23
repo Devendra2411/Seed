@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Dash Board</title>
+<style>
+.aha-emplid-th{
+width: 8%;
+}
+.aha-band-th{
+width: 6%;
+}
+.aha-gender-th{
+width: 6%;
+}
+.aha-emailId-th{
+width: 13%;
+}
+.aha-totalExperience-th{
+width: 13%;
+}
+.aha-supervisorName-th{
+width: 15%;
+}
+.aha-empCluster-th{
+width: 13%;
+}
+.aha-employeeCluster-th{
+    width: 11%;
+}
+
+</style>
+</head>
+<body>
+
+
+
+<px-card style="height: 500px;margin-top: -20px;">
+<!-- <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div> -->
+<!-- <div id="chartContainer" style="height: 370px; width: 100%;"></div>  -->
+<h2>Welcome to ProTrack</h2><br>
+<button value="New" class="btn btn--primary">New</button>
+<button value="New" class="btn btn--primary" style="float:right" ng-click = "exportExcel()" >Export Excel</button>
+<br>
+<px-data-table filterable  striped table-data="{{associateDetailsModified}}">
+  <px-data-table-column name="emplid" label="EMPLID" filterable type="html"></px-data-table-column>
+  <px-data-table-column name="empName" label="EMP NAME" filterable></px-data-table-column>
+  <px-data-table-column name="emailId" label="EMAIL ID" filterable></px-data-table-column>
+  <px-data-table-column name="gender"  label="GENDER" filterable></px-data-table-column>
+  <px-data-table-column name="band"  label="BAND" filterable></px-data-table-column>
+  <px-data-table-column name="totalExperience"  label="EXP" filterable></px-data-table-column>
+  <px-data-table-column name="currentLocationDescription" label="LOCATION" filterable></px-data-table-column>
+  <px-data-table-column name="supervisorName" label="SUPERVISOR NAME" filterable></px-data-table-column>
+  <px-data-table-column name="employeeIbu" label="EMP IBU" filterable></px-data-table-column>
+  <px-data-table-column name="employeeCluster" label="EMP CLUSTER" filterable></px-data-table-column>
+</px-data-table>
+<px-modal
+header-text="Confirm delete"
+body-text="Do you want to delete this record? The record will be deleted permanently."
+accept-text="Permanently Delete Record"
+reject-text="Cancel"
+open-trigger="[[trigger]]">
+</px-modal>
+<px-modal-trigger trigger='{{trigger}}'>
+<button>Open Modal</button>
+</px-modal-trigger>
+</px-card>
+</body>
+</html>

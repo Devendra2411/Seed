@@ -1,0 +1,13 @@
+node_modules
+public/polymer-loader.vulcanized.html
+test-target
+public/**/*-styles.html
+public/index-inline.css
+main.min.css
+.idea
+npm-debug.log
+*.log
+.DS_Store
+temp
+dist
+.github/

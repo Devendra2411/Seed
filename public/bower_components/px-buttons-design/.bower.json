@@ -1,0 +1,43 @@
+{
+  "name": "px-buttons-design",
+  "version": "0.4.39",
+  "authors": [
+    "General Electric",
+    "Harry Roberts <harry@csswizardry.com>"
+  ],
+  "description": "Button object styles for Predix Experience",
+  "main": "_objects.buttons.scss",
+  "keywords": [
+    "px",
+    "sass",
+    "buttons"
+  ],
+  "homepage": "https://github.com/PredixDev/px-buttons-design.git",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "sass",
+    ".github",
+    "OSS_Notice.pdf"
+  ],
+  "dependencies": {
+    "px-colors-design": "~0.2.27",
+    "px-defaults-design": "~0.3.5"
+  },
+  "devDependencies": {
+    "px-sass-doc": "^0.2.11",
+    "px-starter-kit-design": "~0.6.4",
+    "px-polymer-font-awesome": "~0.1.9"
+  },
+  "_release": "0.4.39",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.4.39",
+    "commit": "64ee01c91f094bd47db912376802b7f8ca861d83"
+  },
+  "_source": "https://github.com/PredixDev/px-buttons-design.git",
+  "_target": "^0.4.18",
+  "_originalSource": "https://github.com/PredixDev/px-buttons-design.git"
+}

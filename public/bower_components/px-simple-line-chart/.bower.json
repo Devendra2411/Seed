@@ -1,0 +1,40 @@
+{
+  "name": "px-simple-line-chart",
+  "main": [
+    "px-simple-line-chart.html"
+  ],
+  "ignore": [
+    ".*",
+    "npm-debug.log",
+    "Gruntfile.js",
+    "sass",
+    "bower_components",
+    "node_modules",
+    "test"
+  ],
+  "dependencies": {
+    "polymer": "~1.0.0",
+    "px-theme": "https://github.build.ge.com/PXc/px-theme.git#~0.2.11",
+    "d3": "~3.5.6"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#~v1.0.0",
+    "px-starter-kit-design": "https://github.build.ge.com/PXd/px-starter-kit-design.git#~0.4.0",
+    "px-slider": "https://github.build.ge.com/PXc/px-slider.git",
+    "iron-ajax": "PolymerElements/iron-ajax#~1.0.4",
+    "web-component-tester": "Polymer/web-component-tester#~3.3.21",
+    "underscore": "~1.8.3"
+  },
+  "resolutions": {
+    "polymer": "~1.0.0"
+  },
+  "_release": "9fe2fbd936",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "9fe2fbd93652f186f67b255adab0185bf04faa96"
+  },
+  "_source": "https://github.build.ge.com/PXc/px-simple-line-chart.git",
+  "_target": "master",
+  "_originalSource": "https://github.build.ge.com/PXc/px-simple-line-chart.git"
+}

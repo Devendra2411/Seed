@@ -1,0 +1,39 @@
+{
+  "name": "px-context-browser",
+  "version": "0.4.12",
+  "main": [
+    "src/js/px-context-browser.html"
+  ],
+  "ignore": [
+    ".*",
+    "npm-debug.log",
+    "Gruntfile.js",
+    "sass",
+    "bower_components",
+    "node_modules",
+    "test"
+  ],
+  "dependencies": {
+    "polymer": "~v1.0.3",
+    "px-theme": "https://github.build.ge.com/PXc/px-theme.git#~v0.3.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#~v1.0.4",
+    "px-buttons-design": "https://github.com/PredixDev/px-buttons-design.git#~0.4.0",
+    "px-colors-design": "https://github.build.ge.com/PXd/px-colors-design.git#~0.2.0",
+    "px-headings-design": "https://github.build.ge.com/PXd/px-headings-design.git#~0.2.0",
+    "px-list-bare-design": "https://github.build.ge.com/PXd/px-list-bare-design.git#~0.2.0",
+    "px-list-inline-design": "https://github.build.ge.com/PXd/px-list-inline-design.git#~0.2.0",
+    "px-starter-kit-design": "https://github.build.ge.com/PXd/px-starter-kit-design.git#~0.4.0",
+    "q": "~v1.2.0"
+  },
+  "_release": "0.4.12",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.4.12",
+    "commit": "0d2dbe54c99e662793bd516beeda7b957fc7829a"
+  },
+  "_source": "https://github.build.ge.com/pxc/px-context-browser.git",
+  "_target": "~v0.4.12",
+  "_originalSource": "https://github.build.ge.com/pxc/px-context-browser.git"
+}

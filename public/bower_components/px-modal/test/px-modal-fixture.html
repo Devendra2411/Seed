@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Component Test : Fixture for px-modal</title>
+
+    <!-- BOILERPLATE -->
+    <!-- load webcomponents.js polyfill for browsers that don't support native web components -->
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <!-- load web-component-tester test runner script -->
+    <script src="../../web-component-tester/browser.js"></script>
+    <!-- load and apply default theme, required to run tests -->
+    <link rel="import" href="../../px-theme/px-theme-styles.html"/>
+    <custom-style>
+      <style include="px-theme-styles" is="custom-style"></style>
+    </custom-style>
+
+    <!-- UNIQUE TO THIS COMPONENT -->
+    <!-- import web components to test -->
+    <link rel="import" href="../px-modal.html"/>
+    <link rel="import" href="../px-modal-trigger.html"/>
+    <!-- load test helpers -->
+    <link rel="import" href="../../iron-test-helpers/mock-interactions.html"/>
+    <script src="chai-expect-eventually.js"></script>
+    <!-- load test script -->
+    <script src="px-modal-tests.js"></script>
+  </head>
+  <body>
+    <h3>Web Component Test : Fixture for px-modal</h3>
+    <test-fixture id="ModalFixture">
+      <template>
+        <div>
+          <px-modal
+              header-text="Confirm delete"
+              body-text="Do you want to delete this record? The record will be deleted permanently."
+              accept-text="Permanently Delete Record"
+              reject-text="Cancel">
+          </px-modal>
+          <px-modal-trigger>
+            <button id="openButton">Open Modal</button>
+          </px-modal-trigger>
+        </div>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="ModalFixtureWithSlots">
+      <template>
+        <div>
+          <px-modal>
+            <h1 slot="header">Confirm delete</h1>
+            <div slot="body">
+              <p>Do you want to delete this record? The record will be deleted permanently.</p>
+            </div>
+            <button slot="reject-trigger" id="rejectButton">Cancel</button>
+            <button slot="accept-trigger" id="acceptButton">Permanently Delete Record</button>
+          </px-modal>
+          <px-modal-trigger>
+            <button id="openButton">Open Modal</button>
+          </px-modal-trigger>
+        </div>
+      </template>
+    </test-fixture>
+  </body>
+</html>
