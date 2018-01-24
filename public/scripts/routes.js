@@ -39,7 +39,7 @@ define(['angular', 'angular-ui-router'], function(angular) {
 
         .state('techm', {
             url: '/techm',
-            templateUrl: 'views/dashboard.html',
+            templateUrl: 'views/masterdata/techmdata.html',
             controller: 'TechMDataCtrl'
            
         });

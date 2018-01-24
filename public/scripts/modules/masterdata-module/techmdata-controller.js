@@ -1,11 +1,11 @@
-define(['angular', './sample-module'], function (angular, controllers) {
+define(['angular', '../sample-module/sample-module'], function (angular, controllers) {
 	'use strict';
 
 	// Controller definition
 	controllers.controller('TechMDataCtrl', ['$scope','$rootScope','$timeout','$window','$state', '$log', 'PredixAssetService', 'PredixViewService','TechMDataService', function ($scope,$rootScope,$timeout,$window,$state, $log, PredixAssetService, PredixViewService, TechMDataService) {
 		
 		
-		//$scope.mod = false;
+		
 		console.log("inside the controller");
 		$scope.getAssociateData = function(){
 			TechMDataService.getAssociateData(function(data){
@@ -19,10 +19,7 @@ define(['angular', './sample-module'], function (angular, controllers) {
 		}
 		$scope.getAssociateData();
 		
-	/*	$scope.toggleModal = function(){
-			$scope.mod = !$scope.mod;
-			alert($scope.mod);
-		}*/
+	
 		
 		
 //Hyperlink for the first Column		

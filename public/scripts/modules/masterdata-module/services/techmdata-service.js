@@ -1,5 +1,5 @@
 /*global define */
-define(['angular', '../sample-module'], function (angular, module) {
+define(['angular', '../../sample-module/sample-module'], function (angular, module) {
     'use strict';
     /**
     * PredixViewService is a sample angular service that integrates with Predix View Service API
