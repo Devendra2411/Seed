@@ -29,6 +29,26 @@ width: 13%;
     width: 11%;
 }
 
+input[type=text],  input[type=date],
+       input[type=datetime],  input[type=number],
+       input[type=search],  input[type=time],
+       input[type=url],  input[type=email],
+       select,  textarea {
+       border-radius: 3px;
+       -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+       border: 1px solid #d8e0e5;
+       outline: none;
+       color: #525156;
+       padding: 5px 8px 5px 8px;
+       box-shadow: inset 1px 1px 4px #FFD5E7;
+       -moz-box-shadow: inset 1px 1px 4px #FFD5E7;
+       -webkit-box-shadow: inset 1px 1px 30px #d8e0e5;
+       /* background: #FFEFF6; */
+       width: 80%;
+           margin-bottom: 5px;
+}
+
 </style>
 </head>
 <body>
@@ -39,8 +59,32 @@ width: 13%;
 <!-- <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div> -->
 <!-- <div id="chartContainer" style="height: 370px; width: 100%;"></div>  -->
 <h2>Welcome to ProTrack</h2><br>
-<button value="New" class="btn btn--primary">New</button>
-<button value="New" class="btn btn--primary" style="float:right" ng-click = "exportExcel()" >Export Excel</button>
+<px-modal
+  btn-modal-positive="Continue"
+  btn-modal-negative="Cancel"
+  modal-heading="Add new Employee">
+  <table>
+    <button class="btn btn--primary modal-trigger" style="background-color: royalblue;color: white;border-color: cornflowerblue;">New</button>
+     <tr><td> Employee Id     :</td><td><input type="text" name="emplid" id="empl_id"></td></tr>
+      <tr><td>Employee Name   :</td><td><input type="text" name="empname" id="empl_name"></td></tr>
+      <tr><td>Email Id        :</td><td><input type="email" name="email" id="email"></td></tr>
+      <tr><td>Gender          :</td><td><input type="radio" name="gender" value="male" checked> Male
+                    <input type="radio" name="gender" value="female"> Female
+        <tr><td>Band            :</td><td><select name="band" id="band">
+              <option value="U1">U1</option>
+              <option value="U2">U2</option>
+              <option value="U3">U3</option>
+              <option value="U4">U4</option>
+              <option value="P1">P1</option>
+              <option value="P2">P2</option>
+              <option value="B1">B1</option>
+              <option value="B2">B2</option>
+           </select> </td></tr>
+           <tr><td>Total Experience :</td><td><input type="number" id="exp"> </td></tr> 
+           <tr><td>location         :</td><td><input type="text" id="location"></td></tr> 
+         </table>        
+</px-modal>
+<button value="New" class="btn btn--primary" style="float:right;" ng-click = "exportExcel()" >Export Excel</button>
 <br>
 <px-data-table filterable  striped table-data="{{associateDetailsModified}}">
   <px-data-table-column name="emplid" label="EMPLID" filterable type="html"></px-data-table-column>
@@ -50,7 +94,7 @@ width: 13%;
   <px-data-table-column name="band"  label="BAND" filterable></px-data-table-column>
   <px-data-table-column name="totalExperience"  label="EXP" filterable></px-data-table-column>
   <px-data-table-column name="currentLocationDescription" label="LOCATION" filterable></px-data-table-column>
-  <px-data-table-column name="supervisorName" label="SUPERVISOR NAME" filterable></px-data-table-column>
+  <px-data-table-column name="rmName" label="SUPERVISOR NAME" filterable></px-data-table-column>
   <px-data-table-column name="employeeIbu" label="EMP IBU" filterable></px-data-table-column>
   <px-data-table-column name="employeeCluster" label="EMP CLUSTER" filterable></px-data-table-column>
 </px-data-table>

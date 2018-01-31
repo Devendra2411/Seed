@@ -30,14 +30,32 @@ define(['angular', 'angular-ui-router'], function(angular) {
                 }
             })
            
-             .state('loginPage', {
+            .state('loginPage', {
 				 //parent: 'secure',
 		        url: '/loginPage',
 		        templateUrl: 'views/loginPage.html',
 		        controller: 'loginCtrl'
 		    })
-
-        .state('techm', {
+		    
+		    .state('projects', {
+		    	url: '/projects',
+		        templateUrl: 'views/masterdata/projectdata.html',
+		        controller: 'TechMDataCtrl'
+		    })
+		    
+		    .state('ge', {
+		    	url: '/ge',
+		        templateUrl: 'views/masterdata/gedata.html',
+		        controller: 'TechMDataCtrl'
+		    })
+		    
+		    .state('apps', {
+		    	url: '/apps',
+		        templateUrl: 'views/masterdata/appdata.html',
+		        controller: 'TechMDataCtrl'
+		    })
+		    
+		   .state('techm', {
             url: '/techm',
             templateUrl: 'views/masterdata/techmdata.html',
             controller: 'TechMDataCtrl'

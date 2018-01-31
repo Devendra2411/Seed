@@ -40,6 +40,9 @@ define([
             session: {},
             tabs: [
                 {icon: 'fa-pie-chart', state: 'techm', label: 'TechM Users'},
+                {icon: 'fa-pie-chart', state: 'ge', label: 'GE Users'},
+                {icon: 'fa-pie-chart', state: 'apps', label: 'Applications'},
+                {icon: 'fa-pie-chart', state: 'projects', label: 'Projects'},
               
                 
                 

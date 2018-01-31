@@ -1,0 +1,16 @@
+<px-card style="height: 500px" >
+<br><br>
+<button value="New" class="btn btn--primary">New</button>
+<button value="New" class="btn btn--primary" style="float:right" ng-click = "exportExcel()" >Export Excel</button>
+<br>
+<px-data-table filterable  striped table-data="{{}}">
+  <px-data-table-column name="sso" label="SSO ID" filterable type="html"></px-data-table-column>
+  <px-data-table-column name="name" label="NAME" filterable></px-data-table-column>
+  <px-data-table-column name="location" label="LOCATION" filterable></px-data-table-column>
+  <px-data-table-column name="mobile"  label="MOBILE" filterable></px-data-table-column>
+  <px-data-table-column name="workPhone"  label="WORK PHONE" filterable></px-data-table-column>
+  <px-data-table-column name="mailId"  label="MAIL ID" filterable></px-data-table-column>
+  <px-data-table-column name="designation"  label="DESIGNATION" filterable></px-data-table-column>
+  <px-data-table-column name="managerSso"  label="MANAGER SSO" filterable></px-data-table-column>
+</px-data-table>
+</px-card>

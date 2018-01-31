@@ -1,0 +1,16 @@
+<px-card style="height: 500px" >
+<br><br>
+<button value="New" class="btn btn--primary">New</button>
+<button value="New" class="btn btn--primary" style="float:right" ng-click = "exportExcel()" >Export Excel</button>
+<br>
+<px-data-table filterable  striped table-data="{{}}">
+  <px-data-table-column name="projectId" label="PROJECT ID" filterable type="html"></px-data-table-column>
+  <px-data-table-column name="projectName" label="PROJECT NAME" filterable></px-data-table-column>
+  <px-data-table-column name="projectMngr" label="PROJECT MNGR" filterable></px-data-table-column>
+  <px-data-table-column name="programMngr"  label="PROGRAM MNGR" filterable></px-data-table-column>
+  <px-data-table-column name="ibuHead"  label="IBU HEAD" filterable></px-data-table-column>
+  <px-data-table-column name="ibuClusterHead"  label="CLUSTER HEAD" filterable></px-data-table-column>
+  <px-data-table-column name="superBusiness"  label="SUPER BUSINESS" filterable></px-data-table-column>
+  <px-data-table-column name="businessName"  label="BUSINESS NAME" filterable></px-data-table-column>
+</px-data-table>
+</px-card>
