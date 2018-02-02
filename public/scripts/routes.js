@@ -40,19 +40,19 @@ define(['angular', 'angular-ui-router'], function(angular) {
 		    .state('projects', {
 		    	url: '/projects',
 		        templateUrl: 'views/masterdata/projectdata.html',
-		        controller: 'TechMDataCtrl'
+		        controller: 'ProjectDataCtrl'
 		    })
 		    
 		    .state('ge', {
 		    	url: '/ge',
 		        templateUrl: 'views/masterdata/gedata.html',
-		        controller: 'TechMDataCtrl'
+		        controller: 'GEDataCtrl'
 		    })
 		    
 		    .state('apps', {
 		    	url: '/apps',
 		        templateUrl: 'views/masterdata/appdata.html',
-		        controller: 'TechMDataCtrl'
+		        controller: 'AppDataCtrl'
 		    })
 		    
 		   .state('techm', {

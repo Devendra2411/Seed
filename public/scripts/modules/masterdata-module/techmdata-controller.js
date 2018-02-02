@@ -29,11 +29,29 @@ define(['angular', '../sample-module/sample-module'], function (angular, control
 		var emplids = [];
 		//adding hyperlink to the reqno column 
 		for(var i = 0;i<$scope.associateDetails.length;i++){
-			emplids.push($scope.associateDetails[i].emplid);
+			emplids.push($scope.associateDetails[i].empId);
 		}
 	   $scope.associateDetailsModified=$scope.associateDetails;
 		for(var i = 0; i<$scope.associateDetails.length;i++)
-			$scope.associateDetailsModified[i].emplid = "<a  style='cursor: pointer;' href = '#'');>"+emplids[i]+"</a>";
+			$scope.associateDetailsModified[i].empId = "<a  style='cursor: pointer;' href = '#'');>"+emplids[i]+"</a>";
+		var rmNames = [];
+		var rmIds = [];
+		for(var i = 0;i<$scope.associateDetails.length;i++){
+			if($scope.associateDetails[i].rmName != null)
+				rmNames.push($scope.associateDetails[i].rmName);
+			else
+				rmNames.push("");
+		}
+		for(var i = 0;i<$scope.associateDetails.length;i++){
+			if($scope.associateDetails[i].rmId != null)
+				rmIds.push($scope.associateDetails[i].rmId);
+			else
+				rmIds.push("");
+		}
+		for(var i = 0; i<$scope.associateDetails.length;i++){
+			if(rmNames[i] != "" && rmIds[i]!= "")
+			$scope.associateDetailsModified[i].rmName = rmNames[i]+" ("+rmIds[i]+")";
+		}
 		}
 		
 		

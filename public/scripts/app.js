@@ -53,7 +53,7 @@ define([
      //$rootScope.baseServUrl = "https://cots-services-app.run.aws-usw02-pr.ice.predix.io";
 	
 
-     $rootScope.baseServUrl = "http://localhost:8080/service";
+     $rootScope.baseServUrl = "http://localhost:8080";
         
         $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
             if (angular.isObject(error) && angular.isString(error.code)) {

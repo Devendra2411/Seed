@@ -7,9 +7,9 @@ define(['angular', '../../sample-module/sample-module'], function (angular, modu
     module.factory('TechMDataService', ['$http', '$q','$rootScope', function ($http, $q,$rootScope) {
         return {
              getAssociateData : function(successHandler,errorHandler){
-            	console.log("service Url: "+$rootScope.baseServUrl+"/getAssosciateData");
+            	console.log("service Url: "+$rootScope.baseServUrl+"/techm/getAssosciateData");
             	  window.px.dealer.httpRequest({
-                      url: $rootScope.baseServUrl+"/getAssosciateData",
+                      url: $rootScope.baseServUrl+"/techm/getAssosciateData",
                       method: 'GET'  
                   }).then(function(data){
                          successHandler(data)
@@ -18,6 +18,7 @@ define(['angular', '../../sample-module/sample-module'], function (angular, modu
                   });              
             	
             },
+           
             
             JSONToCSVConvertor : function(JSONData, ReportTitle, ShowLabel) {
                 //If JSONData is not an object then JSON.parse will parse the JSON string in an Object

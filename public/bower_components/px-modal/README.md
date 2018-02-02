@@ -1,8 +1,9 @@
-# px-modal [![Build Status](https://travis-ci.org/PredixDev/px-modal.svg?branch=master)](https://travis-ci.org/PredixDev/px-modal)
+# Px-Modal [![Build Status](https://travis-ci.org/PredixDev/px-modal.svg?branch=master)](https://travis-ci.org/PredixDev/px-modal)
 
 ## Overview
 
-`Px-modal` is a Predix UI component which opens a modal window that overlays the page.
+Px-Modal is a Predix UI component that opens a modal window and overlays over the page.
+
 
 ## Usage
 
@@ -12,17 +13,17 @@
 3. bower
 4. [webcomponents-lite.js polyfill](https://github.com/webcomponents/webcomponentsjs)
 
-Node, npm, and bower are necessary to install the component and dependencies. webcomponents.js adds support for web components and custom elements to your application.
+Node, npm and bower are necessary to install the component and dependencies. webcomponents.js adds support for web components and custom elements to your application.
 
 ### Getting Started
 
-First, install the component via bower on the command line:
+First, install the component via bower on the command line.
 
 ```
 bower install https://github.com/PredixDev/px-modal.git --save
 ```
 
-Second, import the component to your application with the following tag in your head:
+Second, import the component to your application with the following tag in your head.
 
 ```
 <link rel="import" href="/bower_components/px-modal/px-modal.html"/>
@@ -30,7 +31,7 @@ Second, import the component to your application with the following tag in your 
 
 Finally, use the component in your application:
 
-#### Examples
+### Examples
 
 Modal triggered by button click
 ```
@@ -106,7 +107,7 @@ Click on the link to open its modal, click OK to go to www.ge.com:
 </script>
 ```
 
-## Documentation
+## documentation
 
 Read the full API and view the demo [here](https://predixdev.github.io/px-modal).
 
@@ -116,7 +117,7 @@ From the component's directory...
 ```
 $ npm install
 $ bower install
-$ gulp sass
+$ grunt sass
 ```
 
 ### API and examples
@@ -124,7 +125,7 @@ $ gulp sass
 From the component's directory
 
 ```
-$ gulp serve
+$ grunt depserve
 ```
 
 Starts a local server. Navigate to the root of that server (e.g. http://localhost:8080/) in a browser to open the API documentation page, with link to the "Demo" / working examples.

@@ -3,24 +3,24 @@
 <button value="New" class="btn btn--primary">New</button>
 <button value="New" class="btn btn--primary" style="float:right" ng-click = "exportExcel()" >Export Excel</button>
 <br>
-<px-data-table filterable  striped table-data="{{}}">
+<px-data-table filterable  striped table-data="{{appData}}">
   <px-data-table-column name="baseLineName" label="BASE LINE NAME" filterable type="html"></px-data-table-column>
   <px-data-table-column name="business" label="BUSINESS" filterable></px-data-table-column>
   <px-data-table-column name="baseLineId" label="BASE LINE ID" filterable></px-data-table-column>
   <px-data-table-column name="searchCode"  label="SEARCH CODE" filterable></px-data-table-column>
-  <px-data-table-column name="imOwner"  label="IM OWNER" filterable></px-data-table-column>
+  <px-data-table-column name="imOwnerName"  label="IM OWNER" filterable></px-data-table-column>
   <px-data-table-column name="workgroup"  label="WORKGROUP" filterable></px-data-table-column>
   <px-data-table-column name="configItem"  label="CONFIG ITEM" filterable></px-data-table-column>
   <px-data-table-column name="technology"  label="TECHNOLOGY" filterable></px-data-table-column>
   <px-data-table-column name="tier"  label="TIER" filterable></px-data-table-column>
   <px-data-table-column name="supportCoverage"  label="SUPPORT COVERAGE" filterable></px-data-table-column>
   <px-data-table-column name="supportTime"  label="SUPPORT TIME" filterable></px-data-table-column>
-  <px-data-table-column name="p1"  label="PRIMARY 1" filterable></px-data-table-column>
-  <px-data-table-column name="p2"  label="PRIMARY 2" filterable></px-data-table-column>
-  <px-data-table-column name="p3"  label="PRIMARY 3" filterable></px-data-table-column>
-  <px-data-table-column name="s1"  label="SECONDARY 1" filterable></px-data-table-column>
-  <px-data-table-column name="s2"  label="SECONDARY 2" filterable></px-data-table-column>
-  <px-data-table-column name="s3"  label="SECONDARY 3" filterable></px-data-table-column>
+  <px-data-table-column name="p1Name"  label="PRIMARY 1" filterable></px-data-table-column>
+  <px-data-table-column name="p2Name"  label="PRIMARY 2" filterable></px-data-table-column>
+  <px-data-table-column name="p3Name"  label="PRIMARY 3" filterable></px-data-table-column>
+  <px-data-table-column name="s1Name"  label="SECONDARY 1" filterable></px-data-table-column>
+  <px-data-table-column name="s2Name"  label="SECONDARY 2" filterable></px-data-table-column>
+  <px-data-table-column name="s3Name"  label="SECONDARY 3" filterable></px-data-table-column>
   <px-data-table-column name="status"  label="STATUS" filterable></px-data-table-column>
 </px-data-table>
 </px-card>
