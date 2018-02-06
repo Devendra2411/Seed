@@ -49,7 +49,8 @@ define([
             ]
         };
 
-        
+        $rootScope.userId = 1111;
+        $rootScope.role = 2;
      //$rootScope.baseServUrl = "https://cots-services-app.run.aws-usw02-pr.ice.predix.io";
 	
 

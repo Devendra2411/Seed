@@ -8,9 +8,9 @@ define(['angular', '../../sample-module/sample-module'], function (angular, modu
     	
     	 return {
     		 getProjectData : function(successHandler,errorHandler){
-             	console.log("service Url: "+$rootScope.baseServUrl+"/projects/getProjectData");
+             	console.log("service Url: "+$rootScope.baseServUrl+"/projects/getProjectData?role="+$rootScope.role+"&userId="+$rootScope.userId);
              	  window.px.dealer.httpRequest({
-                       url: $rootScope.baseServUrl+"/projects/getProjectData",
+                       url: $rootScope.baseServUrl+"/projects/getProjectData?role="+$rootScope.role+"&userId="+$rootScope.userId,
                        method: 'GET'  
                    }).then(function(data){
                           successHandler(data)

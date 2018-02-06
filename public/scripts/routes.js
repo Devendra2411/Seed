@@ -67,7 +67,7 @@ define(['angular', 'angular-ui-router'], function(angular) {
             var $state = $injector.get('$state');
             //document.querySelector('px-app-nav').markSelected('/billing');
            // $("px-app-nav").hide();
-            $state.go('techm');
+            $state.go('loginPage');
         });
        
       /* $urlRouterProvider.otherwise(function ($injector) {

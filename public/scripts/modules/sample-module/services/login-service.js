@@ -7,9 +7,9 @@ define(['angular', '../sample-module'], function (angular, module) {
     module.factory('LogInService', ['$http', '$q','$rootScope', function ($http, $q,$rootScope) {
         return {
              logInService : function(data,successHandler,errorHandler){
-            	console.log("service Url: "+$rootScope.baseServUrl+"/login");
+            	console.log("service Url: "+$rootScope.baseServUrl+"/service/login");
             	  window.px.dealer.httpRequest({
-                      url: $rootScope.baseServUrl+"/login",
+                      url: $rootScope.baseServUrl+"/service/login",
                       method: 'POST',
                       data:data,
                       headers : { 'Content-Type': "application/json",

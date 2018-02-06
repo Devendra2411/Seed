@@ -5,7 +5,9 @@ define(['angular', '../sample-module/sample-module'], function (angular, control
 	controllers.controller('AppDataCtrl', ['$scope','$rootScope','$timeout','$window','$state', '$log', 'PredixAssetService', 'PredixViewService','AppDataService', function ($scope,$rootScope,$timeout,$window,$state, $log, PredixAssetService, PredixViewService, AppDataService) {
 		
 		console.log("inside the appDatacontroller");
+		console.log("Logged In::"+$rootScope.userId+"    role"+$rootScope.role);
 		$scope.getAppData = function(){
+			
 			AppDataService.getAppData(function(data){
 				$scope.appData = data;
 				console.log("APP Data: "+JSON.stringify($scope.appData));
@@ -129,11 +131,12 @@ define(['angular', '../sample-module/sample-module'], function (angular, control
 					else
 						$scope.modifiedAppData[i].s2Name = "";
 				
-				if(s2Names[i] != "" && s2Ids[i]!= "")
-					$scope.modifiedAppData[i].s2Name = s2Names[i]+" ("+s2Ids[i]+")";
+				if(s3Names[i] != "" && s3Ids[i]!= "")
+					$scope.modifiedAppData[i].s3Name = s3Names[i]+" ("+s3Ids[i]+")";
 					else
-						$scope.modifiedAppData[i].s2Name = "";
+						$scope.modifiedAppData[i].s3Name = "";
 			}
+			console.log($scope.modifiedAppData);
 		}
 		
 	}]);

@@ -20,20 +20,43 @@ define(['angular', '../sample-module/sample-module'], function (angular, control
 		$scope.getAssociateData();
 		
 	
+		    window.navigate = function(id){
+		    
+			console.log("inside display details func");
+			console.log( JSON.stringify($scope.associateDetails));
+		    $scope.modelName = $scope.associateDetailsModified[id].empName;
+		    $scope.modelId = $scope.associateDetails[id].empId;
+		    $scope.modelEmail = $scope.associateDetailsModified[id].emailId;
+		    $scope.modelGender = $scope.associateDetailsModified[id].gender;
+		    $scope.modelBand = $scope.associateDetailsModified[id].band;
+		    $scope.modelExp = $scope.associateDetailsModified[id].totExp;
+		    $scope.modelLocation = $scope.associateDetailsModified[id].currentLocation;
+		    $scope.modelMngrName = $scope.associateDetailsModified[id].rmName;
+		    $scope.modelIbu = $scope.associateDetailsModified[id].employeeIbu;
+		    $scope.modelCluster = $scope.associateDetailsModified[id].employeeCluster;
+		    $scope.modelMobile = $scope.associateDetailsModified[id].mobile;
+		    $scope.modelWrkphone = $scope.associateDetailsModified[id].workPhone;
+		    $scope.modelPid = $scope.associateDetailsModified[id].pid;
+		    $scope.modelSso = $scope.associateDetailsModified[id].sso;
+		    $scope.modelStatus = $scope.associateDetailsModified[id].status;
+		    $scope.$apply();
+			document.getElementById("getDetails").click();
+			
+		}
 		
-		
+	
 //Hyperlink for the first Column		
 		$scope.getModifiedAssociateData = function(){
 			$scope.associateDetailsModified = [];
 		console.log("Assosciate Data:"+JSON.stringify($scope.associateDetails));
 		var emplids = [];
-		//adding hyperlink to the reqno column 
 		for(var i = 0;i<$scope.associateDetails.length;i++){
 			emplids.push($scope.associateDetails[i].empId);
 		}
-	   $scope.associateDetailsModified=$scope.associateDetails;
+	   $scope.associateDetailsModified=JSON.parse(JSON.stringify($scope.associateDetails));
+	   
 		for(var i = 0; i<$scope.associateDetails.length;i++)
-			$scope.associateDetailsModified[i].empId = "<a  style='cursor: pointer;' href = '#'');>"+emplids[i]+"</a>";
+			$scope.associateDetailsModified[i].empId = "<a  style='cursor: pointer;' href = '#' onclick = navigate("+i+")>"+emplids[i]+"</a>";
 		var rmNames = [];
 		var rmIds = [];
 		for(var i = 0;i<$scope.associateDetails.length;i++){
@@ -51,7 +74,11 @@ define(['angular', '../sample-module/sample-module'], function (angular, control
 		for(var i = 0; i<$scope.associateDetails.length;i++){
 			if(rmNames[i] != "" && rmIds[i]!= "")
 			$scope.associateDetailsModified[i].rmName = rmNames[i]+" ("+rmIds[i]+")";
+			else
+				$scope.associateDetailsModified[i].rmName = "";
 		}
+		console.log("Assosiate Details:: "+ JSON.stringify($scope.associateDetails));
+		   console.log("Modified Details:: "+ JSON.stringify($scope.associateDetailsModified));
 		}
 		
 		

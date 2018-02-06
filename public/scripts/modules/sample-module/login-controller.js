@@ -13,7 +13,7 @@ define(['angular', './sample-module'], function (angular, controllers) {
 			name: $scope.userName,
 			password: $scope.password
 		};
-			var status;
+			$rootScope.role;
 			$scope.validate = function(){
 			 data ={
 						name: $scope.userName,
@@ -21,19 +21,18 @@ define(['angular', './sample-module'], function (angular, controllers) {
 					};
 						
 			LogInService.logInService(data,function(response){
-			  status=response;
-			  if(status == "admin"){
+				$rootScope.role=response;
+			  if($rootScope.role == "2" || $rootScope.role == "1"){
 				  console.log("Successful login");
 			       $state.go("techm");
 			       $("px-app-nav").show();
-			       if(status == "UserName or Password is wrong"){
-			    	   
-			       }
+			       $rootScope.userId = $scope.userName;
 			  }
 			  else{
-				  $scope.errorMsg = "LogIn Failed";
+				  alert("LogIn failed");
+				/*  $scope.errorMsg = "LogIn Failed";
 				  $(errormsg).show();
-				   console.log("Login Failed");
+				   console.log("Login Failed");*/
 			  }
 			},function(error){
 				$scope.errorMsg = "Error Occured";
