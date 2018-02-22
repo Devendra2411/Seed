@@ -1,14 +1,122 @@
 <style>
-
+input[type=text],  input[type=date],
+       input[type=datetime],  input[type=number],
+       input[type=search],  input[type=time],
+       input[type=url],  input[type=email],
+       select,  textarea {
+       border-radius: 3px;
+       -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+       border: 1px solid #d8e0e5;
+       outline: none;
+       color: #525156;
+       padding: 5px 8px 5px 8px;
+       box-shadow: inset 1px 1px 4px #FFD5E7;
+       -moz-box-shadow: inset 1px 1px 4px #FFD5E7;
+       -webkit-box-shadow: inset 1px 1px 30px #d8e0e5;
+     /*  background: #FFEFF6;  */
+           margin-bottom: 5px;
+}
+.modaltechm .modal__content.px-modal{
+margin-top: 4%;
+}
+.modaltechm .modal__content.px-modal{
+max-width: 44.333333rem;
+    width: 50%;
+}
 </style>
 
 
 <px-card style="height: 500px" >
 <br><br>
-<button value="New" class="btn btn--primary">New</button>
-<button value="New" class="btn btn--primary" style="float:right" ng-click = "exportExcel()" >Export Excel</button>
+<px-modal   
+ btn-modal-positive="OK" >
+		 <input type="button" id="successMsg" class="modal-trigger" value="" style="display: none;"> 
+		<div>
+		
+		<img class="icon icons8-Ok-Filled" width="30" height="30" style="margin-left: 163px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAD8klEQVRoQ+1aX1LaYBD/LbF9LTeoj51pQ6GG5+IJqicQTtBwAvEESU8gnkB7AvGZOFDSzvStegN462jjdr5AmBAg+fLli3ac+uZkd7O//b8bCM/kj54JDvwHssmT5rD7iSpcZ0aLGFUQ1VfomMdMmBJhwEQD/4NzpSsiCnvk3dBuEeGIQG0VpRjcZ8bZ96Y7UOGPeJSBmJ59QIAD0G4RBZa8c2+d+JZ7oSIvN5A3I3v3RYBTArVUXpjFw+DBvYHOz4Z7k0Ubf54LyMILpwBV87wkPy1PGejk8Y40kNq1fQymXn6lCnAQ9yZ77omMBCkgpmeLUFJKZhkl0mhEMfAtt5MlJxNIbWj3QHScJajU58wnk6abGg2pQOY5QeelKikpnMGHaTmzFYioTi8DjMpPbEkk4Omdgca2arYViOnZl2WVWFnVk3SiNPuWu7+JfyOQJwipGTPGRPiYBXJbiG0EUvPsX9o6dpZm4jlxd7LnujWv6wL4nMrCPJ403UaSZg2ImJ0qRJcy79dBw4wrv+mEU4KsAR+Y95Oz2RoQ0+v2CTjSoaSEjNmdwXWRwHnKPANnvuWs9LU1IDWvyxIK6CFZhNTbkV03AhrlETqxnBXdV/55zCRn4JtvOeG+Uhvao7XdJQNVMrxWgORxbx7rbaINDG78aLhj5Xcmuv2qR4bdgUwJLAoCCyWKNN14kQgLX1wpFRcrgLqdWE64jBVquokyvArkERI9iu3atW2DyVEwxJIlnvCPDeTLxHLs+siuPgQQTbfQgqYLyCwwuGUE4Z6S3o3nNrytGFwfN9yp6dnnBDoo4g3BqwVIfIAzr+02MZ2mKRbNSDpL/FYgptcdE/Be1lLx7S0NDANffcs50BVSQr94H1qrWqZK+WUeV3awL0Jm0aHFfepVzBizisG74rnUUChpxazyq7bWpoCJQkr7MJraEAuttnwTGDgU3Xp++6ILMKZisl2ElNg29RzzAKSOKPNRusjQyNPAwL4AI5T/DVTDyVZmz5AMqYgsdWicd9uiY/zqcU1lss3CJDXG64plJu74e26/jLFHarFahJe4u77OskzWc9FrdB8wkmU30uFfOT5k2WT5PNfxIcwVlZ4irY4aYbJ3xKVkHOhonGhuahro4Vru95vEPf+TaYRaeRXV44W5lKJH7EiX4r1FHdWmnpE7tOIMT+IZCU+klt9t9lvsEv1HKAAzBrdL+fQWgQsHwj/UL+vaIkrs/Q63S/0YGveU8A5AvTyLWFqmiI4NcC+PF6T6iGx6zn8wQG3Ve7FIZmbuP9kPBjYBDQdOoMXiGzyhmvRWaHXGlMCDB2BQVHmtHpH1XNl0mV91y1ZAl/xnA+QvO8wMUVCCtvUAAAAASUVORK5CYII="> 
+	     </div>
+	     <p style="text-align:center">{{msg}}</p>
+</px-modal>
+<px-modal   btn-modal-positive="OK">
+		 <input type="button" id="errorMsg" class="modal-trigger" value="" style="display: none;">
+		 
+		 <div style="align:center;">
+		
+		 <img class="icon icons8-Warning-Shield" width="30" height="30" style="margin-left: 190px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAACJ0lEQVRIS72WT27TQBTGv+eYBWJB2SA5G9ITEHZRHImyixpL7Q0oJyCcgPQE9Q1ob9BKdsWOIMUVS/cEZBVL3QALJCQcPzQT7PrveMyCt7Tfm9/M+755NqFDRIfjEyZ6K0oIcC0/uNAtJ51EAQDRexANCvnMawALHaASdHc4Hm4N4wzAQcuGlr0keff0+iZsyqsFfTse7v36/egMRCc6J05zmNl9+ODn6ZPL8Hu5LgNF09GATPMo2e3+gIC9LpAMBgjI0gCWHMdX1scvor1C011EM3sNomf/snhjDfPa8oP9ziAG3xJo/nfhT22bEvl9LxgWQc5kCeBlS/Fny1tJY0TOhNtAALL8+9b9L9DGGbsEQ17GpmDmsO8HLzqc6NTyVotC6zYze05E4s4ow/JWsgtarUuSN9b1zXlZI9H7VoE7gYBXlrcS2t/bW3eXXUBpbgW0mdmXRHSk6p0uiJmv+n5wnK5VGEE6OumCkNOn2rrpaADT/NriB+kiMbWVeXG8n46fCkjqNLPPQfS60eLg210hPVfcgwvLDwoDuTK9I2fS6L78SNk4dqiAZW6r1Sh9GDVMifyFbQKVTaAGCa16ZgjC43J7BEy2jkgOy0IwfmAbD/PaKEFSK/H5NowPLcYovi45Lf9S+SlvM0bxNFwxgDZIx4VyMVZDau1d1yrlyTQg2qBMMzLczCBCeE7m6XRu01Lrvy6z/XQ04F7PJfEDst0u6tzVBPwDP+D/G7UP/SMAAAAASUVORK5CYII="></div>
+		  <p style="text-align:center">{{msg}}</p>
+		    <ul>
+		  <li ng-repeat = "msg in msgs">{{msg}}</li>
+		  </ul>
+</px-modal>
+ 
+<px-modal
+  modal-heading="Add new Project"  class="modaltechm">
+  <button class="btn btn--primary modal-trigger btnGlobal">New</button>
+  <table>
+     <tr>
+         <td> Project Id     :</td><td><input type="text"  id="insert-id" ng-model="insertId"></td>
+         <td>Project Name   :</td><td><input type="text"  id="insert-name" ng-model="insertName"></td>
+     </tr>
+      <tr>
+         <td> Project Manager Id    :</td><td><input type="text" id="insert-prjmanager" ng-model="insertPrjManager"></td>
+         <td>Program Manager Id  :</td><td><input type="text" id="insert-prgmanager" ng-model="insertPrgManager"></td>
+     </tr>
+      <tr>
+         <td>IBU Head Id   :</td><td><input type="text"  id="insert-ibuhead" ng-model="insertIbuHead"></td>
+         </tr>
+         <tr>
+         <td>Cluster Head  :</td><td><input type="text" id="insert-clusterhead" ng-model="insertClusterHead"></td>
+     </tr>
+      <tr>
+         <td> Super Business    :</td><td><input type="text"  id="insert-sb" ng-model="insertSB"></td>
+            </tr>
+            <tr>
+         <td>Business Name   :</td><td><input type="text"  id="insert-bn" ng-model="insertbn"></td>
+     </tr>
+      <tr>
+         <td> Manager Id    :</td><td><input type="text"  id="insert-mngrid" ng-model="insertMngrName"></td>
+     </tr>
+         </table> 
+       <button id="insertOK" ng-click="insertProjectData()" class="btn btn--primary" style="float:right">OK</button>
+      <button id="insertCancel" ng-click="cancel()" class="btn btn--primary" style="float:right">Cancel</button>
+</px-modal>
+<px-modal
+  modal-heading="Add new Project"  class="modaltechm">
+  <button class="btn btn--primary modal-trigger" id="editBtn" style="display:none">Edit</button>
+  <table>
+     <tr>
+         <td> Project Id     :</td><td><input type="text"  id="insert-id" ng-model="editId"></td>
+         <td>Project Name   :</td><td><input type="text"  id="insert-name" ng-model="editName"></td>
+     </tr>
+      <tr>
+         <td> Project Manager Id    :</td><td><input type="text" id="insert-prjmanager" ng-model="editPrjManager"></td>
+         <td>Program Manager Id  :</td><td><input type="text" id="insert-prgmanager" ng-model="editPrgManager"></td>
+     </tr>
+      <tr>
+         <td>IBU Head Id   :</td><td><input type="text"  id="insert-ibuhead" ng-model="editIbuHead"></td>
+         </tr>
+         <tr>
+         <td>Cluster Head  :</td><td><input type="text" id="insert-clusterhead" ng-model="editClusterHead"></td>
+     </tr>
+      <tr>
+         <td> Super Business    :</td><td><input type="text"  id="insert-sb" ng-model="editSB"></td>
+            </tr>
+            <tr>
+         <td>Business Name   :</td><td><input type="text"  id="insert-bn" ng-model="editbn"></td>
+     </tr>
+      <tr>
+         <td> Manager Id    :</td><td><input type="text"  id="insert-mngrid" ng-model="editMngrName"></td>
+     </tr>
+         </table> 
+       <button id="editOK" ng-click="editProjectData()" class="btn btn--primary" style="float:right">OK</button>
+      <button id="editCancel" ng-click="cancel()" class="btn btn--primary" style="float:right">Cancel</button>
+</px-modal>
+
+<button class="btn btn--primary btnGlobalExport" style="float:right" ng-click = "exportExcel()" >Export Excel</button>
 <br>
-<px-data-table filterable  striped table-data="{{projectDataModified}}">
+<px-data-table filterable  striped table-data="{{projectDataModified}}" id= "projectData">
+<px-data-table-column name="options" label="ACTIONS" type="html"></px-data-table-column>
   <px-data-table-column name="projectId" label="PROJECT ID" filterable type="html"></px-data-table-column>
   <px-data-table-column name="projectName" label="PROJECT NAME" filterable></px-data-table-column>
   <px-data-table-column name="projectMngrName" label="PROJECT MNGR" filterable></px-data-table-column>

@@ -7,11 +7,13 @@ define(['angular', '../sample-module/sample-module'], function (angular, control
 		console.log("inside the appDatacontroller");
 		console.log("Logged In::"+$rootScope.userId+"    role"+$rootScope.role);
 		$scope.getAppData = function(){
-			
 			AppDataService.getAppData(function(data){
 				$scope.appData = data;
-				console.log("APP Data: "+JSON.stringify($scope.appData));
-				$scope.getModifiedAppData();
+				$scope.appDataModified= JSON.parse(JSON.stringify($scope.appData));
+				$scope.appDataModified.forEach(function(app,index){
+					app.options = '<center><span onclick="editRow('+index+')"><i style="margin-right:15px; cursor:pointer"  class="fa fa-edit modal-trigger"></i></span><span onclick="deleteRow('+index+')"><i style = "cursor:pointer" class="fa fa-trash"></i></span></center>';
+				})
+				console.log("APP Data: "+JSON.stringify($scope.appDataModified));
 				$scope.$apply();
 			},function(error){
 				console.log("error: "+error);
@@ -19,124 +21,148 @@ define(['angular', '../sample-module/sample-module'], function (angular, control
 		}
 		$scope.getAppData();
 		
-		$scope.getModifiedAppData = function(){
-			$scope.modifiedAppData = [];
-			var imOwnerNames =[];
-			var imOwnerIds = [];
-			var p1Names = [];
-			var p2Names= [];
-			var p3Names = [];
-			var s1Names = [];
-			var s2Names = [];
-			var s3Names = [];
-			var p1Ids = [];
-			var p2Ids = [];
-			var p3Ids = [];
-			var s1Ids = [];
-			var s2Ids = [];
-			var s3Ids = [];
-			for(var i = 0;i<$scope.appData.length;i++){
-				if($scope.appData[i].imOwnerName != null)
-					imOwnerNames.push($scope.appData[i].imOwnerName);
-				else
-					imOwnerNames.push("");
-				if($scope.appData[i].imOwnerId != null)
-					imOwnerIds.push($scope.appData[i].imOwnerId);
-				else
-					imOwnerIds.push("");
-				
-				if($scope.appData[i].p1Name != null)
-					p1Names.push($scope.appData[i].p1Name);
-				else
-					p1Names.push("");
-				if($scope.appData[i].p1Id != null)
-					p1Ids.push($scope.appData[i].p1Id);
-				else
-					p1Ids.push("");
-				
-				if($scope.appData[i].p2Name != null)
-					p2Names.push($scope.appData[i].p2Name);
-				else
-					p2Names.push("");
-				if($scope.appData[i].p2Id != null)
-					p2Ids.push($scope.appData[i].p2Id);
-				else
-					p2Ids.push("");
-				
-				if($scope.appData[i].p3Name != null)
-					p3Names.push($scope.appData[i].p3Name);
-				else
-					p3Names.push("");
-				if($scope.appData[i].p3Id != null)
-					p3Ids.push($scope.appData[i].p3Id);
-				else
-					p3Ids.push("");
-				
-				if($scope.appData[i].s1Name != null)
-					s1Names.push($scope.appData[i].s1Name);
-				else
-					s1Names.push("");
-				if($scope.appData[i].s1Id != null)
-					s1Ids.push($scope.appData[i].s1Id);
-				else
-					s1Ids.push("");
-				
-				if($scope.appData[i].s2Name != null)
-					s2Names.push($scope.appData[i].s2Name);
-				else
-					s2Names.push("");
-				if($scope.appData[i].s2Id != null)
-					s2Ids.push($scope.appData[i].s2Id);
-				else
-					s2Ids.push("");
-				
-				if($scope.appData[i].s3Name != null)
-					s3Names.push($scope.appData[i].s3Name);
-				else
-					s3Names.push("");
-				if($scope.appData[i].s3Id != null)
-					s3Ids.push($scope.appData[i].s3Id);
-				else
-					s3Ids.push("");
+		window.editRow = function(index){
+			$scope.editApp(index);
+			document.getElementById("editBtn").click();
+		}
+		window.deleteRow = function(index){
+			$scope.deleteSelected(index);
+		}
+		
+		$scope.editApp = function(index){
+			$scope.selectedIndex=index;
+			debugger;
+			$scope.editBsn = $scope.appData[$scope.selectedIndex].baseLineName;
+			$scope.editBln = $scope.appData[$scope.selectedIndex].baseLineId;
+			$scope.editBus=$scope.appData[$scope.selectedIndex].business;
+			$scope.editSc=$scope.appData[$scope.selectedIndex].searchCode;
+			$scope.editIm=$scope.appData[$scope.selectedIndex].imOwnerId;
+			$scope.editSupp=$scope.appData[$scope.selectedIndex].supportCoverage;
+			$scope.editWg=$scope.appData[$scope.selectedIndex].workgroup;
+			$scope.editSt=$scope.appData[$scope.selectedIndex].supportTime;
+			$scope.editCi=$scope.appData[$scope.selectedIndex].configItem;
+			$scope.editP1=$scope.appData[$scope.selectedIndex].p1Id;
+			$scope.editTech=$scope.appData[$scope.selectedIndex].technology;
+			$scope.editP2=$scope.appData[$scope.selectedIndex].p2Id;
+			$scope.editTier=$scope.appData[$scope.selectedIndex].tier;
+			$scope.editP3=$scope.appData[$scope.selectedIndex].p3Id;
+			$scope.editS1=$scope.appData[$scope.selectedIndex].s1Id;
+			$scope.editS2=$scope.appData[$scope.selectedIndex].s2Id;
+			$scope.editS3=$scope.appData[$scope.selectedIndex].s3Id;
+			$scope.editStatus=$scope.appData[$scope.selectedIndex].status;
+			$scope.editProjId=$scope.appData[$scope.selectedIndex].projectId;
+			$scope.$apply();
+		}
+		
+		$scope.editAppData = function(){
+			
+			
+		  var data ={
+					"baseLineName":$scope.editBsn,
+					"baseLineId":$scope.editBln,
+					"business":$scope.editBus ,
+					"searchCode":$scope.editSc ,
+					"imOwnerId":$scope.editIm ,
+					"supportCoverage":$scope.editSupp ,
+					"workgroup":$scope.editWg,
+					"supportTime": $scope.editSt,
+					"configItem": $scope.editCi,
+					"p1Id":$scope.editP1,
+					"technology":$scope.editTech,
+					"p2Id":$scope.editP2,
+					"tier":$scope.editTier ,
+					"p3Id":$scope.editP3 ,
+					"s1Id":$scope.editS1 ,
+					"s2Id":$scope.editS2 ,
+					"s3Id":$scope.editS3,
+					"status": $scope.editStatus,
+					"projectId": $scope.editProjId
+			};
+		  $(".modal.px-modal").css("visibility", "hidden");
+		  AppDataService.editAppDetails(data,function(response){
+				console.log("Response:: "+response);
+				if(response=="success"){
+				$scope.msg="data Edited Successfully";
+				document.getElementById("successMsg").click();
+				}else{
+					$scope.msg="data Edit Failed DB error occured";
+					document.getElementById("errorMsg").click();
+				}
+				$scope.getAppData();
+			},function(error){
+				$scope.msg="Data Edit Failed";
+				document.getElementById("errorMsg").click();
+				console.log("Error:"+error);
+				$scope.getAppData();
+			});
+		  
+		}
+		
+		$scope.insertAppData = function(){
+			debugger;
+			
+			  var data ={
+						"baseLineName":$scope.insertBsn,
+						"baseLineId":$scope.insertBln,
+						"business":$scope.insertBus ,
+						"searchCode":$scope.insertSc ,
+						"imOwnerId":$scope.insertIm ,
+						"supportCoverage":$scope.insertSupp ,
+						"workgroup":$scope.insertWg,
+						"supportTime": $scope.insertSt,
+						"configItem": $scope.insertCi,
+						"p1Id":$scope.insertP1,
+						"technology":$scope.insertTech,
+						"p2Id":$scope.insertP2,
+						"tier":$scope.insertTier ,
+						"p3Id":$scope.insertP3 ,
+						"s1Id":$scope.insertS1 ,
+						"s2Id":$scope.insertS2 ,
+						"s3Id":$scope.insertS3,
+						"status": $scope.insertStatus,
+						"projectId": $scope.insertProjId
+				};
+			  $(".modal.px-modal").css("visibility", "hidden");
+			  AppDataService.insertAppDetails(data,function(response){
+					console.log("Response:: "+response);
+					if(response=="success"){
+					$scope.msg="Data Added Successfully";
+					document.getElementById("successMsg").click();
+					}else{
+						$scope.msg="Data Add Failed DB error occured";
+						document.getElementById("errorMsg").click();
+					}
+					$scope.getAppData();
+				},function(error){
+					$scope.msg="Data Add Failed";
+					document.getElementById("errorMsg").click();
+					console.log("Error:"+error);
+					$scope.getAppData();
+				});
+			  
 			}
-			$scope.modifiedAppData=$scope.appData;
-			for(var i = 0; i<$scope.appData.length;i++){
-				if(imOwnerNames[i] != "" && imOwnerIds[i]!= "")
-				$scope.modifiedAppData[i].imOwnerName = imOwnerNames[i]+" ("+imOwnerIds[i]+")";
-				else
-					$scope.modifiedAppData[i].imOwnerName = "";
-				
-				if(p1Names[i] != "" && p1Ids[i]!= "")
-					$scope.modifiedAppData[i].p1Name = p1Names[i]+" ("+p1Ids[i]+")";
-					else
-						$scope.modifiedAppData[i].p1Name = "";
-				
-				if(p2Names[i] != "" && p2Ids[i]!= "")
-					$scope.modifiedAppData[i].p2Name = p2Names[i]+" ("+p2Ids[i]+")";
-					else
-						$scope.modifiedAppData[i].p2Name = "";
-				
-				if(p3Names[i] != "" && p3Ids[i]!= "")
-					$scope.modifiedAppData[i].p3Name = p3Names[i]+" ("+p3Ids[i]+")";
-					else
-						$scope.modifiedAppData[i].p3Name = "";
-				
-				if(s1Names[i] != "" && s1Ids[i]!= "")
-					$scope.modifiedAppData[i].s1Name = s1Names[i]+" ("+s1Ids[i]+")";
-					else
-						$scope.modifiedAppData[i].s1Name = "";
-				
-				if(s2Names[i] != "" && s2Ids[i]!= "")
-					$scope.modifiedAppData[i].s2Name = s2Names[i]+" ("+s2Ids[i]+")";
-					else
-						$scope.modifiedAppData[i].s2Name = "";
-				
-				if(s3Names[i] != "" && s3Ids[i]!= "")
-					$scope.modifiedAppData[i].s3Name = s3Names[i]+" ("+s3Ids[i]+")";
-					else
-						$scope.modifiedAppData[i].s3Name = "";
+		
+		$scope.deleteSelected = function(index){
+			var baseLineNames = [];
+			baseLineNames.push($scope.appData[index].baseLineName);
+			AppDataService.deleteApps(baseLineNames,function(response){
+				if(response == "Success"){
+					$scope.msg = "Deleted Successfully";
+					document.getElementById("successMsg").click();
+					$scope.getAppData();	
+				}
+				else{
+					$scope.msg = "Unable to delete";
+					document.getElementById("errorMsg").click();
+				}
+			},function(error){
+				$scope.msg = "Unable to delete";
+				document.getElementById("errorMsg").click();
 			}
-			console.log($scope.modifiedAppData);
+			)
+		}
+		$scope.cancel = function(){
+			$(".modal.px-modal").css("visibility", "hidden");
 		}
 		
 	}]);

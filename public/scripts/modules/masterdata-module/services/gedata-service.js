@@ -17,7 +17,54 @@ define(['angular', '../../sample-module/sample-module'], function (angular, modu
                  	  console.log(data);
                    });              
              	
-             }
+             },
+             insertGeDetails : function(data,successHandler,errorHandler){
+               	console.log("service Url: "+$rootScope.baseServUrl+"/ge/addGeAssociateDetails?userId="+$rootScope.userId);
+               	  window.px.dealer.httpRequest({
+                         url: $rootScope.baseServUrl+"/ge/addGeAssociateDetails?userId="+$rootScope.userId,
+                         method: 'POST',
+                         data: data,
+                         headers: {'Accept' : 'text/plain' , 'Content-Type': 'application/json'}
+                     }).then(function(data){
+                            successHandler(data)
+                     },function(data){
+                   	  console.log(data);
+                     });              
+               	
+               },
+             
+             editGeDetails : function(data,successHandler,errorHandler){
+                	console.log("service Url: "+$rootScope.baseServUrl+"/ge/editGeAssociateDetails?userId="+$rootScope.userId);
+                	  window.px.dealer.httpRequest({
+                          url: $rootScope.baseServUrl+"/ge/editGeAssociateDetails?userId="+$rootScope.userId,
+                          method: 'POST',
+                          data: data,
+                          headers: {'Accept' : 'text/plain' , 'Content-Type': 'application/json'}
+                      }).then(function(data){
+                             successHandler(data)
+                      },function(data){
+                    	  console.log(data);
+                      });              
+                	
+                },
+                deleteGeAssociates : function(data,successHandler,errorHandler){
+                   	console.log("service Url: "+$rootScope.baseServUrl+"/ge/deleteGeAssociates");
+                   	  window.px.dealer.httpRequest({
+                             url: $rootScope.baseServUrl+"/ge/deleteGeAssociates",
+                             data : data,
+                             method: 'POST',
+                             headers : { 'Content-Type' : 'application/json', 'Accept' : 'text/plain'}
+                         }).then(function(data){
+                                successHandler(data)
+                         },function(data){
+                       	  	errorHandler(data);
+                         });              
+                   	
+                   }
     	 }
+    	
+    	 
+    	
+    	 
     }]);
 });

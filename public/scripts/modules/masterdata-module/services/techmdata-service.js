@@ -19,6 +19,47 @@ define(['angular', '../../sample-module/sample-module'], function (angular, modu
             	
             },
            
+            editAssociateData : function(data,successHandler,errorHandler){
+            	console.log("service Url: "+$rootScope.baseServUrl+"/techm/edittAssosciateData?userId="+$rootScope.userId);
+            	  window.px.dealer.httpRequest({
+                      url: $rootScope.baseServUrl+"/techm/editAssociateDetails?userId="+$rootScope.userId,
+                      method: 'POST',
+                      data: data,
+                      headers: {'Accept' : 'text/plain' , 'Content-Type': 'application/json'}
+                  }).then(function(data){
+                         successHandler(data)
+                  },function(data){
+                	  console.log(data);
+                  });              
+            	
+            },
+            insertAssociateData : function(data,successHandler,errorHandler){
+            	console.log("service Url: "+$rootScope.baseServUrl+"/techm/addAssociateDetails?userId="+$rootScope.userId);
+            	  window.px.dealer.httpRequest({
+                      url: $rootScope.baseServUrl+"/techm/addAssociateDetails?userId="+$rootScope.userId,
+                      method: 'POST',
+                      data: data,
+                      headers: {'Accept' : 'text/plain' , 'Content-Type': 'application/json'}
+                  }).then(function(data){
+                         successHandler(data)
+                  },function(data){
+                	  console.log(data);
+                  });              
+            	
+            },
+            deleteAssociates : function(data,successHandler,errorHandler){
+            	window.px.dealer.httpRequest({
+                      url: $rootScope.baseServUrl+"/techm/deleteAssociates",
+                      data:data,
+                      method: 'POST',
+                      headers : { 'Content-Type' : 'application/json', 'Accept' : 'text/plain'}
+                  }).then(function(data){
+                         successHandler(data)
+                  },function(data){
+                	  console.log(data);
+                  });              
+            	
+            },
             
             JSONToCSVConvertor : function(JSONData, ReportTitle, ShowLabel) {
                 //If JSONData is not an object then JSON.parse will parse the JSON string in an Object
