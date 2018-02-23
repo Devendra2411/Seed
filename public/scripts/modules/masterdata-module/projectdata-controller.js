@@ -51,7 +51,7 @@ define(['angular', '../sample-module/sample-module'], function (angular, control
 					"ibuHeadId":$scope.editIbuHead ,
 					"ibuClusterHeadId":$scope.editClusterHead ,
 					"superBusiness":$scope.editSB ,
-					"businessName":$scope.editBn 
+					"businessName":$scope.editBn
 			};
 			$(".modal.px-modal").css("visibility", "hidden");
 			debugger;
@@ -82,7 +82,7 @@ define(['angular', '../sample-module/sample-module'], function (angular, control
 				"ibuHeadId":$scope.insertIbuHead ,
 				"ibuClusterHeadId":$scope.insertClusterHead ,
 				"superBusiness":$scope.insertSB ,
-				"businessName":$scope.insertBn 
+				"businessName":$scope.insertBn
 		};
 		$(".modal.px-modal").css("visibility", "hidden");
 		ProjectDataService.insertProjectDetails(data,function(response){

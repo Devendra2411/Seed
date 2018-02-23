@@ -79,9 +79,10 @@ define(['angular', '../sample-module/sample-module'], function (angular, control
 		    $scope.editGender = $scope.associateDetailsModified[$scope.selectedIndex].gender;
 		    console.log($scope.editGender);
 		    console.log($scope.associateDetailsModified[$scope.selectedIndex].band);
-		    var desiredValue = $scope.associateDetailsModified[$scope.selectedIndex].band;
-		    $('#edit-band option[value="'+desiredValue+'"]').attr("selected", "selected");
-		    $("input[name=gender][value="+$scope.editGender+"]").prop('checked', true);
+		  /*  var desiredValue = $scope.associateDetailsModified[$scope.selectedIndex].band;
+		    $('#edit-band option[value="'+desiredValue+'"]').attr("selected", "selected");*/
+		    /*$("input[name=gender][value="+$scope.editGender+"]").prop('checked', true);*/
+		    $scope.editBand = $scope.associateDetailsModified[$scope.selectedIndex].band;
 		    $scope.editExp = $scope.associateDetailsModified[$scope.selectedIndex].totExp;
 		    $scope.editLocation = $scope.associateDetailsModified[$scope.selectedIndex].currentLocation;
 		    $scope.editMngrId = $scope.associateDetailsModified[$scope.selectedIndex].rmId;
@@ -99,22 +100,7 @@ define(['angular', '../sample-module/sample-module'], function (angular, control
 			var selGender = $('input[name=gender]:checked').val();
 			var selBand = dd.options[dd.selectedIndex].value;
 			debugger;
-			if(!$scope.editExp){
-				$scope.editExp = "";
-				console.log($scope.editExp);
-			}
-			if(!$scope.editMngrId){
-				$scope.editMngrId = "";
-			}
-			if(!$scope.editSso){
-				$scope.editSso = "";
-			}
-			if(!$scope.editMobile){
-				$scope.editMobile = "";
-			}
-			if(!$scope.editPid){
-				$scope.editPid ="";
-			}
+		
 			var data = {"empId": $scope.editId, 
 					"empName": $scope.editName, 
 					"emailId":$scope.editEmail,
@@ -161,22 +147,6 @@ define(['angular', '../sample-module/sample-module'], function (angular, control
 			var insertBand = dd.options[dd.selectedIndex].value;
 			console.log(insertBand);
 			debugger;
-			if(!$scope.editExp){
-				$scope.editExp = "";
-				console.log($scope.editExp);
-			}
-			if(!$scope.editMngrId){
-				$scope.editMngrId = "";
-			}
-			if(!$scope.editSso){
-				$scope.editSso = "";
-			}
-			if(!$scope.editMobile){
-				$scope.editMobile = "";
-			}
-			if(!$scope.editPid){
-				$scope.editPid ="";
-			}
 			var data = {"empId": $scope.insertId, 
 					"empName": $scope.insertName, 
 					"emailId":$scope.insertEmail,
@@ -213,6 +183,24 @@ define(['angular', '../sample-module/sample-module'], function (angular, control
 				$scope.getAssociateData();
 				console.log(error);
 			});
+			
+			$scope.insertId = "";
+			$scope.insertName = ""; 
+			$scope.insertEmail="";
+			$scope.insertGender="";
+			$scope.insertBand ="";
+			$scope.insertExp ="";
+			$scope.insertLocation="";
+			$scope.insertMngrId="";
+			$scope.insertIbu  ="";
+			$scope.insertCluster="";
+			$scope.insertMobile="";
+			$scope.insertWrkphone  ="";
+			$scope.insertPid="";
+			$scope.insertSso ="";
+			$scope.insertStatus="";
+			$scope.insertDept ="";
+			
 		}
 		
 		$scope.deleteSelected = function(empId,ssoId){

@@ -34,7 +34,20 @@ define(['angular', './sample-module'], function (angular, module) {
             
             	
             },
+            chartViewCall : function(baseUrl,successHandler){
+            	
+                var deferred = $q.defer();
+                var config = {};
+                $http.get(baseUrl)
+             	.then(function (res) {
+                   	successHandler(res.data);
+                   	deferred.resolve(res.data);
+                 }
+               );
+                return deferred.promise;
             
+            	
+            },
             NameAndProductCall : function(baseUrl,data,successHandler){
             	
                 var deferred = $q.defer();
@@ -50,6 +63,38 @@ define(['angular', './sample-module'], function (angular, module) {
             
             	
             },
+           logInService : function(baseUrl,data,successHandler){
+            	
+                var deferred = $q.defer();
+                var config = {};
+                $http.post(baseUrl,data)
+             	.then(function (res) {
+                   	successHandler(res.data);
+                   	
+                   	deferred.resolve(res.data);
+                 }
+               );
+                return deferred.promise;
+            
+            	
+            },
+            
+         
+                /*     logInService : function(baseUrl,data,successHandler){
+                    	
+                    	  window.px.dealer.httpRequest({
+                              url: baseUrl,
+                              method: 'POST',
+                              data:data,
+                              headers : { 'Content-Type': "application/json" }
+                          }).then(function(data){
+                                 successHandler(data)
+                          },function(data){
+                        	  errorHandler(data)
+                          }
+                          );              
+                    	
+                    },*/
             
             billingRegistrySingleCall : function(baseUrl,data,successHandler){
             	

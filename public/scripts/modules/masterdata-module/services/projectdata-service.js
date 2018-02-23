@@ -19,7 +19,7 @@ define(['angular', '../../sample-module/sample-module'], function (angular, modu
                    });              
              	
              },
-             insertprojectDetails : function(data,successHandler,errorHandler){
+             insertProjectDetails : function(data,successHandler,errorHandler){
                 	console.log("service Url: "+$rootScope.baseServUrl+"/projects/addProjectDetails?userId="+$rootScope.userId);
                 	  window.px.dealer.httpRequest({
                           url: $rootScope.baseServUrl+"/projects/addProjectDetails?userId="+$rootScope.userId,

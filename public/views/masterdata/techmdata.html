@@ -116,8 +116,8 @@ max-width: 44.333333rem;
      </tr>
       <tr></tr>
       <tr></tr>
-      <tr><td>Gender          :</td><td><input type="radio" name="gender" value="male" checked> Male
-                    <input type="radio" name="gender" value="female"> Female</td>
+      <tr><td>Gender          :</td><td><input type="radio" name="gender" value="M" checked> Male
+                    <input type="radio" name="gender" value="F"> Female</td>
                     <td>Email Id        :</td><td><input type="email" name="email" id="email"  ng-model="insertEmail"></td>
         <tr>
         <td>Band            :</td><td><select name="band" id="insert_band">
@@ -177,14 +177,14 @@ max-width: 44.333333rem;
 		</tr>
 		<tr>
 			<td>Gender :</td>
-			<td><input type="radio" name="gender" value="male" checked>Male 
-			<input type="radio" name="gender" value="female">Female</td>
+			<td><input type="radio" name="gender" value="M" ng-model="editGender" checked>Male 
+			<input type="radio" name="gender" value="F" ng-model="editGender">Female</td>
 			<td>Status :</td>
 			<td><input type="text" id="edit-status" ng-model=editStatus></td>
 		</tr>
 		<tr>
 			<td>Band :</td>
-			<td><select name="band" id="edit-band">
+			<td><select name="band" id="edit-band" ng-model="editBand">
 					<option value="U1">U1</option>
 					<option value="U2">U2</option>
 					<option value="U3">U3</option>
@@ -234,8 +234,8 @@ max-width: 44.333333rem;
  <px-data-table-column name="options" label="ACTIONS" type="html"></px-data-table-column>
   <px-data-table-column name="empId" label="EMPLID" filterable type="html"></px-data-table-column>
   <px-data-table-column name="empName" label="EMP NAME" filterable></px-data-table-column>
-  <!-- <px-data-table-column name="emailId" label="EMAIL ID" filterable></px-data-table-column> -->
- <!--  <px-data-table-column name="gender"  label="GENDER" filterable></px-data-table-column> -->
+  <px-data-table-column name="emailId" label="EMAIL ID" filterable></px-data-table-column>
+  <px-data-table-column name="gender"  label="GENDER" filterable></px-data-table-column>
   <px-data-table-column name="band"  label="BAND" filterable></px-data-table-column>
    <px-data-table-column name="totExp"  label="EXP" filterable></px-data-table-column> 
   <px-data-table-column name="currentLocation" label="LOCATION" filterable></px-data-table-column>

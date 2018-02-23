@@ -49,12 +49,8 @@ define([
             ]
         };
 
-        $rootScope.userId = 1111;
-        $rootScope.role = 1;
-     //$rootScope.baseServUrl = "https://cots-services-app.run.aws-usw02-pr.ice.predix.io";
-	
-
-     $rootScope.baseServUrl = "http://localhost:8080";
+     
+     $rootScope.baseServUrl = "https://protrack-services.run.aws-usw02-pr.ice.predix.io";
         
         $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
             if (angular.isObject(error) && angular.isString(error.code)) {

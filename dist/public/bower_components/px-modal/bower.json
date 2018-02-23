@@ -1,31 +1,28 @@
 {
   "name": "px-modal",
-  "version": "2.0.0",
+  "version": "1.2.0",
   "main": [
     "px-modal.html"
   ],
   "ignore": [
-    "*.enc",
-    "**/.*",
-    "node_modules",
-    "bower_components",
+    ".*",
+    "npm-debug.log",
+    "Gruntfile.js",
     "sass",
-    "*.md",
-    "scripts",
-    ".github",
-    "gulpfile.js",
-    "wct.conf.json",
+    "bower_components",
+    "node_modules",
     "test",
-    "OSS_Notice.pdf",
-    "*.png",
-    "npm-debug.log"
+    "OSS_Notice.pdf"
   ],
   "dependencies": {
-    "polymer": "^v1.6.0"
+    "polymer": "^v1.5.0",
+    "px-theme": "https://github.com/PredixDev/px-theme.git#~0.8.0"
   },
   "devDependencies": {
-    "px-theme": "^3.0.0",
-    "px-starter-kit-design": "^1.0.0",
-    "px-demo": "^2.0.0"
+    "iron-component-page": "PolymerElements/iron-component-page#~v1.1.0",
+    "px-buttons-design": "https://github.com/PredixDev/px-buttons-design.git#~0.4.0",
+    "px-starter-kit-design": "https://github.com/PredixDev/px-starter-kit-design.git#~0.4.0",
+    "px-headings-design": "https://github.com/PredixDev/px-headings-design.git#~0.2.0",
+    "jquery": "~2.1.4"
   }
 }

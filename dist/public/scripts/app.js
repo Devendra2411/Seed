@@ -39,25 +39,18 @@ define([
             name: 'Predix Seed',
             session: {},
             tabs: [
-                {icon: 'fa-tachometer',  label: 'Billing',subitems: [
-                           {state: 'view', label: 'View'},
-                           {state: 'report', label: 'Report'}
-                    ]},
-                {icon: 'fa-file-o', state: '', label: 'Mile Stone', subitems: [
-                    {state: 'manageschedules', label: 'Manage Schedules'},
-                    {state: 'mreports', label: 'Reports'}
-                ]},
-                {icon: 'fa-tachometer', state: 'demo', label: 'Quality Assurance'},
+                {icon: 'fa-pie-chart', state: 'techm', label: 'TechM Users'},
+                {icon: 'fa-pie-chart', state: 'ge', label: 'GE Users'},
+                {icon: 'fa-pie-chart', state: 'apps', label: 'Applications'},
+                {icon: 'fa-pie-chart', state: 'projects', label: 'Projects'},
+              
                 
                 
             ]
         };
 
-        
-     $rootScope.baseServUrl = "https://cots-services-app.run.aws-usw02-pr.ice.predix.io";
-	
-
-     //$rootScope.baseServUrl = "http://localhost:8080";
+     
+     $rootScope.baseServUrl = "https://protrack-services.run.aws-usw02-pr.ice.predix.io";
         
         $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
             if (angular.isObject(error) && angular.isString(error.code)) {

@@ -1,10 +1,8 @@
-# px-modal [![Build Status](https://travis-ci.org/PredixDev/px-modal.svg?branch=master)](https://travis-ci.org/PredixDev/px-modal)
-
-[![px-modal demo](px-modal.png?raw=true)](https://github.com/PredixDev/px-modal)
+# Px-Modal [![Build Status](https://travis-ci.org/PredixDev/px-modal.svg?branch=master)](https://travis-ci.org/PredixDev/px-modal)
 
 ## Overview
 
-px-modal is a Predix UI component that opens a modal window and overlays over the page.
+Px-Modal is a Predix UI component that opens a modal window and overlays over the page.
 
 
 ## Usage
@@ -119,7 +117,7 @@ From the component's directory...
 ```
 $ npm install
 $ bower install
-$ gulp sass
+$ grunt sass
 ```
 
 ### API and examples
@@ -127,7 +125,7 @@ $ gulp sass
 From the component's directory
 
 ```
-$ gulp serve
+$ grunt depserve
 ```
 
 Starts a local server. Navigate to the root of that server (e.g. http://localhost:8080/) in a browser to open the API documentation page, with link to the "Demo" / working examples.

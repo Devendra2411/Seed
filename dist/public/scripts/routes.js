@@ -29,65 +29,44 @@ define(['angular', 'angular-ui-router'], function(angular) {
                     }]
                 }
             })
-            .state('view', {
-                //parent: 'secure',
-                url: '/view',
-                id: 'view',
-                templateUrl: 'views/view.html',
-                controller: 'ViewCtrl'
-            })
-             .state('loginPage', {
+           
+            .state('loginPage', {
+				 //parent: 'secure',
 		        url: '/loginPage',
 		        templateUrl: 'views/loginPage.html',
 		        controller: 'loginCtrl'
 		    })
-            .state('report', {
-               
-                url: '/report',
-                templateUrl: 'views/report.html',
-                controller: 'ReportCtrl'
-            })
-            .state('billingregistry', {
-                url: '/billingregistry',
-                templateUrl: 'views/billingregistry.html',
-                	controller: 'BillingRegistryCtrl'
-            })
-            
-            .state('manageschedules', {
-                url: '/manageschedules',
-                templateUrl: 'views/manageschedules.html',
-                	controller: 'ManageSchedulesCtrl'
-            })
-            .state('schedules', {
-                url: '/schedules',
-                templateUrl: 'views/schedules.html',
-                controller: 'ScheduleCtrl'
-            })
-            .state('demo', {
-             
-                url: '/demo',
-                templateUrl: 'views/demo.html'
-                
-            })
-             .state('mreports', {
-             
-                url: '/mreports',
-                templateUrl: 'views/mreports.html'
-                
-            })
-            .state('form', {
-                url: '/form',
-                templateUrl: 'views/form.html',
-                controller: 'FormCtrl'
-               
-            });
-          
+		    
+		    .state('projects', {
+		    	url: '/projects',
+		        templateUrl: 'views/masterdata/projectdata.html',
+		        controller: 'ProjectDataCtrl'
+		    })
+		    
+		    .state('ge', {
+		    	url: '/ge',
+		        templateUrl: 'views/masterdata/gedata.html',
+		        controller: 'GEDataCtrl'
+		    })
+		    
+		    .state('apps', {
+		    	url: '/apps',
+		        templateUrl: 'views/masterdata/appdata.html',
+		        controller: 'AppDataCtrl'
+		    })
+		    
+		   .state('techm', {
+            url: '/techm',
+            templateUrl: 'views/masterdata/techmdata.html',
+            controller: 'TechMDataCtrl'
+           
+        });
 
 
        $urlRouterProvider.otherwise(function ($injector) {
             var $state = $injector.get('$state');
             //document.querySelector('px-app-nav').markSelected('/billing');
-            $("px-app-nav").hide();
+           // $("px-app-nav").hide();
             $state.go('loginPage');
         });
        
