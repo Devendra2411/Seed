@@ -32,17 +32,16 @@ define([
      * child controllers to access properties defined on the $rootScope.
      */
     predixApp.controller('MainCtrl', ['$scope', '$rootScope', 'PredixUserService', function ($scope, $rootScope, predixUserService) {
-
+    	$rootScope.baseServUrl = "http://localhost:8080/PGC";
+    	$rootScope.loggedInUser="502634279";
         //Global application object
         window.App = $rootScope.App = {
             version: '1.0',
             name: 'Predix Seed',
             session: {},
             tabs: [
-                {icon: 'fa-pie-chart', state: 'techm', label: 'TechM Users'},
-                {icon: 'fa-pie-chart', state: 'ge', label: 'GE Users'},
-                {icon: 'fa-pie-chart', state: 'apps', label: 'Applications'},
-                {icon: 'fa-pie-chart', state: 'projects', label: 'Projects'},
+                {icon: 'fa-pie-chart', state: 'home', label: 'Home'},
+                {icon: 'fa-pie-chart', state: 'blank', label: 'Blank'},
               
                 
                 
@@ -50,8 +49,8 @@ define([
         };
 
      
-     $rootScope.baseServUrl = "https://protrack-services.run.aws-usw02-pr.ice.predix.io";
-        
+    
+    
         $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
             if (angular.isObject(error) && angular.isString(error.code)) {
                 switch (error.code) {
