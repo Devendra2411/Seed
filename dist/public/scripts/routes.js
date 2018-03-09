@@ -36,38 +36,26 @@ define(['angular', 'angular-ui-router'], function(angular) {
 		        templateUrl: 'views/loginPage.html',
 		        controller: 'loginCtrl'
 		    })
-		    
-		    .state('projects', {
-		    	url: '/projects',
-		        templateUrl: 'views/masterdata/projectdata.html',
-		        controller: 'ProjectDataCtrl'
+		       .state('assets', {
+		    	url: '/assets',
+		        templateUrl: 'views/assets.html',
+		        controller: 'AssetCtrl'
 		    })
 		    
-		    .state('ge', {
-		    	url: '/ge',
-		        templateUrl: 'views/masterdata/gedata.html',
-		        controller: 'GEDataCtrl'
-		    })
+		    .state('configuration', {
+		    	url: '/config',
+		        templateUrl: 'views/configuration.html',
+		        controller: 'ConfigCtrl'
+		    });
 		    
-		    .state('apps', {
-		    	url: '/apps',
-		        templateUrl: 'views/masterdata/appdata.html',
-		        controller: 'AppDataCtrl'
-		    })
-		    
-		   .state('techm', {
-            url: '/techm',
-            templateUrl: 'views/masterdata/techmdata.html',
-            controller: 'TechMDataCtrl'
-           
-        });
+		   
 
 
        $urlRouterProvider.otherwise(function ($injector) {
             var $state = $injector.get('$state');
-            //document.querySelector('px-app-nav').markSelected('/billing');
+           // document.querySelector('px-app-nav').markSelected('/home');
            // $("px-app-nav").hide();
-            $state.go('loginPage');
+            $state.go('configuration');
         });
        
       /* $urlRouterProvider.otherwise(function ($injector) {

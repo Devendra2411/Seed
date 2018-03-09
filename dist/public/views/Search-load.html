@@ -1,0 +1,145 @@
+<div id="successMessage" ><px-alert-message type="information"   message-title={{alertMsgInfo}}   message="" auto-dismiss="5000" action="acknowledge" ></px-alert-message></div>
+<div id="errorMessage" >
+<px-alert-message type="important" message-title={{alertMsgErr}} message="" auto-dismiss="5000" action="acknowledge" language="en"></px-alert-message>
+</div>
+<div id="WarningMessage" >
+<px-alert-message type="warning" message-title={{alertMsgWarn}} message="" auto-dismiss="5000" action="acknowledge" language="en"></px-alert-message>
+</div>
+<px-card header-text="">
+<div id="bredcumFS" >
+		<p></p>
+		<p><b>FinSum - Search & Load</b></p>
+		<!-- <p class="timeInterval">Idle Timeout:<span id="SecondsUntilExpire"></span></p> -->
+	<div class="clear"></div>
+</div>
+<div id ="fsHeader">
+	<div class="headerFS" id="oprNumberFs">
+		<div class="headerImgFS"><img id="opprSearch"  alt = "No image here" src="images/opprSearch.png"></div>
+		<div class="headerTextFS"><p class="textFs">Opportunity Number (IPS)</p>
+		<p class="headerTextboxFS"><input id="textBoxFS" class="InputtextFS " type="text"  ng-model="opprNum" ng-keyup="$event.keyCode == 13 ? opprSearch() : return" ><i class="fa fa-search" ng-click ="opprSearch()" aria-hidden="true" ></i></p>
+		</div><div class="clear"></div>
+	</div>
+	<div class="headerFS" id="openRecFs">
+		<div class="headerImgFS"><img id="recentFS"  alt = "No image here" src="images/recentFS.png"></div>
+		<div class="headerTextFS"><p class="textFs">Open Recent FinSum</p>
+		<p class="headerTextboxFS"><button  class="btn btn-large btn-default buttonFileOpenFs" id="buttonOpenFS" ng-click = "openRecentFinsum()" ng-disabled= "openRecentFsdisa"><img id="fileOpen" class="img " src="images/fileOpen.png">Open Recent FinSum</button></p>   <!-- "openFinSum()" -->
+		</div><div class="clear"></div>
+	</div>
+	<div class="headerFS" id="createNewFs">
+		<div class="headerImgFS"><img id="newFS"  alt = "No image here"  src="images/newFS.png"></div>
+		<div class="headerTextFS"><p class="textFs">Create New Record</p>
+		<p class="headerTextboxFS"><button  class="btn btn-large btn-default buttonNewRecFs" ng-click = "createNewRecord()"><img id="createNewRec" class="img" src="images/createNewRec.png">Create New Record</button></p>
+		</div><div class="clear"></div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div id="opprvalues">
+	<div>
+		<img id="calenderIcon" class="img " src="images/calenderIcon.png">
+		<span class="opprNumberSpan" >Opportunity Number (IPS): </span> <span>{{opprNum}}</span>
+	</div>
+	<div>
+		<span class="opprNumberSpan" >Opportunity  Name : </span><span><px-tooltip for="btn1" delay="500" tooltip-message="{{objHeaderDtls.projectName}}" orientation="top" tooltip-style="light"></px-tooltip><span id="btn1" ng-show="displayTooltip" class="prjtName objHeadercommon">{{objHeaderpjtName}}<span ng-show="removeDotsprjt">...</span></span></span>
+	</div>
+	<div>
+		<span class="opprNumberSpan" >Customer Name :  </span><span><px-tooltip for="btn1" delay="500" tooltip-message="{{objHeaderDtls.customer}}" orientation="top" tooltip-style="light"></px-tooltip><span id="btn1" ng-show="displayTooltip" class="custName objHeadercommon">{{objHeaderCust}} <span ng-show="removeDotsCust">...</span> </span></span>
+	</div>
+	<div>
+	</div>
+</div><div class="clear"></div>
+
+    <div id="tableFS" >
+		 <px-data-table id="fmTable" table-data="{{opprSearchArr}}"  filterable="true" striped>
+			<px-data-table-column id="fmTablebookMarkOpty" name="bookMarkOppty" label="Opportunity Number (IPS)" type="html"  sortable filterable/></px-data-table-column>
+		    <px-data-table-column id="fmTableRevision" name="revLink" label="FinSum Revision" type="html" sortable filterable></px-data-table-column>
+		    <px-data-table-column name="fsStatus" label="FinSum Status" type="html"  sortable filterable/></px-data-table-column>
+		    <px-data-table-column name="revDesc" label="Record Description" type="html"  sortable filterable></px-data-table-column>
+		    <px-data-table-column name="lstUpdtDt" label="Last Updated Date" type="html"  sortable filterable/></px-data-table-column>
+		    <px-data-table-column name="lstUpdtdBy" label="Last Modified By" type="html"  sortable filterable/></px-data-table-column>
+		</px-data-table> 
+	</div> 
+	
+<px-modal modal-heading='Create New Record' class='px-modal-createNew-trigger' id="CreateNewRec">
+	<button class='btn btn--primary modal-trigger' id='cancelCreateNewRec' style='display: none;'></button>
+<div class="form-style-3 formScroll">
+<form name="createNewRecForm" id ="createNewRecForm" novalidate>
+	<fieldset> 
+	<label for="field1">
+		<span>Opportunity Number (IPS) <span class="required">*</span></span>
+		<input type="number" id="field1" ng-model="objCreateFS.opprNumber" class="input-field" name="field1" value="" required />
+	</label>
+	<div>
+		<p class="error createNewRecVal"   ng-show="submitted && createNewRecForm.field1.$error.required"> 
+	  	<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Please enter Opportunity Number (IPS).</p>
+  	</div>
+	<label for="field2"><span>FinSum Revision </span><input id="SelRevision" type="text" ng-model="objCreateFS.selectedRevision" class="input-field" name="field2" value="1" disabled /></label>
+	<label for="field3"><span>FinSum Status </span><input type="text" id="SelEstimate" class="input-field" ng-model="objCreateFS.selectedStatus" name="field3" value="Estimate" disabled/></label>
+	<label for="field4"><span>Reporting Currency<span class="required">*</span></span>
+	<select name="field4" class="select-field" ng-init="objCreateFS.selectedCurrency = fsReportCurrencyArray[usdIndex]" ng-model="objCreateFS.selectedCurrency" ng-options="rep.reportCurName as rep.reportCurName for rep in fsReportCurrencyArray" required>
+	<option></option>
+	</select>
+	</label>
+	<div><p class="error createNewRecVal"   ng-show="submitted && createNewRecForm.field4.$error.required"> 
+  				<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Please enter Reporting Currency.</p></div>
+	
+	<label for="field5"><span>Business<span class="required">*</span></span>
+	<select name="field5" id="bussinessSel" class="select-field"  ng-model="objCreateFS.selBussiness"  ng-disabled ="disabledForBuss" ng-options="bus.business as bus.business for bus in arrBussiness" required>
+	<option value="" disabled selected>Select</option>
+	<option></option>
+	</select>
+	</label>
+	<div><p class="error createNewRecVal"   ng-show="submitted && createNewRecForm.field5.$error.required"> 
+  				<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Please Select Bussiness.</p></div>
+	
+	
+	
+	<label for="field6"><span>Record Description <span class="required">*</span></span><textarea name="field6" id="createNewrecDesc" ng-model="objCreateFS.enterDesc" class="textarea-field" required></textarea></label>
+	<div><p class="error createNewRecVal"   ng-show="submitted && createNewRecForm.field6.$error.required"> 
+  				<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Please enter Record Description.</p></div>
+  	<label for="field6"><span><input type="radio" id ="createRadio_CNR" ng-click="btnRadioClicked('createRadio_CNR');" checked="checked" > Create New Record</span>
+  					    <span><input type="radio" id ="createRadio_CC" ng-click="btnRadioClicked('createRadio_CC');">Create & Clone</span> </label>
+  	<div class="clear"></div>
+  		<div id="cloneFunc" ng-show="isClone">
+  				<label for="field7">
+					<span>Clone Opportunity Number (IPS) <span class="required">*</span></span>
+					<select name="field7" class="select-field" ng-change="additionalOpprSelected()" ng-model="objCreateFS.additionalOpprNum" ng-options="rep.opprNumber as rep.opprNumber for rep in arrAdditionalOpprs" required>
+						<option></option>
+					</select>
+				</label>
+				<div>
+					<p class="error createNewRecVal"   ng-show="submitted && createNewRecForm.field7.$error.required"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Please select clone Opportunity Number (IPS).</p>
+				</div>
+				
+				<label for="field8">
+					<span>Clone FinSum Revision <span class="required">*</span></span>
+					<select name="field8" class="select-field" ng-change="additionalOpprRevisionSelection()" ng-model="objCreateFS.additionalOpprRevision" ng-options="item for item in arrRevisions" required>
+						<option></option>
+					</select>
+				</label>
+				<div>
+					<p class="error createNewRecVal"   ng-show="submitted && createNewRecForm.field8.$error.required"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Please select clone finSum revision.</p>
+				</div>
+		</div>
+	<div id="createNewRecButtons">
+		<button  class="btn btn-large btn-default createSubmit" ng-click="submitted=true;createNewRec()"><i class="fa fa-floppy-o" aria-hidden="true"></i>Submit</button>
+		<button  class="btn btn-large btn-default cancelCreate" ng-click="cancelCreateNewRec()"><i class="fa fa-times-circle-o" aria-hidden="true"></i>Cancel</button>
+	</div>
+	</fieldset>
+</form>
+
+</div>
+	</px-modal>
+
+<script>
+ function fSRevision(key,fxAcptdBy) {
+	 debugger;
+	angular.element(document.getElementById('fmTableRevision')).scope().openFinSum(key,fxAcptdBy);
+}
+ function fsStarToggle(key) {
+	angular.element(document.getElementById('fmTablebookMarkOpty')).scope().toggleFavRev(key);
+}
+</script>
+
+
+</px-card>

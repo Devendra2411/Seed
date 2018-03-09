@@ -23,10 +23,10 @@ define(['angular'], function (angular) {
                 'request': function (config) {
                     // do something before request
                 	
-                	if($rootScope.showSpinner){
+                	/*if($rootScope.showSpinner){
             		
             			$("#spinner").show();
-            		}
+            		}*/
                     return config;
                 },
                 // optional method
@@ -38,7 +38,7 @@ define(['angular'], function (angular) {
                 'response': function (response) {
                     // do something on success
                 	
-                	$("#spinner").hide();
+                	/*$("#spinner").hide();*/
                     return response;
                 },
                 // (optional) Redirect user to login page when unauthorized (401)

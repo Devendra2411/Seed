@@ -1,0 +1,34 @@
+<style>
+input{
+margin-bottom:10px
+}
+</style>
+<px-card>
+	<h1>OAuth Token Details:</h1>
+	<fieldset style="width:100%;">
+	
+	<table>
+	<tr><td><label>Target Uaa Url</label></td><td><input id="uaaUrl" type="text" required ng-model="uaaUrl" style="width:355%"></input><br></td></tr>
+	<tr><td><label>UserName</label></td><td><input type="text" required ng-model="userName" style="width:150%"></input><br></td></tr>
+	<tr><td><label>Password</label></td><td><input type="password" required ng-model="pwd" style="width:150%"></input><br></td></tr>
+	<tr><td><label>Grant Type</label></td><td><select  ng-model="grantType" style="width:150%;margin-bottom:10px">
+				<option selected disabled>Select</option>
+				<option value="password">Password</option>
+				<option value="client_credentials">Client Credentials</option>
+				<option value="implicit">Implicit</option>
+				</select><br></td></tr>
+	<tr><td></td><td><button class="btn" style="left:80%">Edit</button>	
+	<button class="btn" style="left:85%" ng-click="getToken()">Get Token</button></td></tr></table>
+	</fieldset>
+	<h1>Asset Details:</h1>
+	<fieldset style="width:100%;">
+	
+	<table>
+	<tr><td><label for="assetUrl">Asset Url :</label></td><td><input type="text" required ng-model="assetUrl" style="width:350%" required></input></td></tr>
+	<tr><td><label for="tenantUUid" >Tenant ID :</label></td><td><input id="tenantUUid" type="text"  ng-model="tenantId" style="width:150%" required></input><br></td></tr>
+	
+	<tr><td></td><td><button class="btn" ng-click="saveAssetDet()" style="left:80%">Save</button></td></tr></table>
+	</fieldset>
+	
+</px-card> 
+	

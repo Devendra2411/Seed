@@ -1,0 +1,41 @@
+<style>
+.modalPGC .modal__content.px-modal{
+    min-width: 88%!important;
+width:50%!important;
+}
+.delTagBtn{
+left: 92%;
+    position: relative;
+    }
+</style>
+<px-card>
+<h1 style="text-align: center;vertical-align: middle;line-height: 90px;color:Red"></h1>
+ <px-data-table table-data="{{assetDataList}}" language="en" filterable sortable>
+ <px-data-table-column type="string" name="name" label="Name" sortable  filterable></px-data-table-column>
+ <px-data-table-column type="string" name="sourceKey" label="Source Key" sortable  filterable></px-data-table-column>
+ <px-data-table-column type="string" name="description" label="Description" sortable filterable></px-data-table-column>
+  <px-data-table-column type="html" name="getTags" label="Actions"></px-data-table-column>
+ <px-data-table-column type="html" name="cascade" label="Actions" ></px-data-table-column>
+ <px-data-table-column type="string" name="uri" label="Uri" sortable filterable></px-data-table-column>
+
+ </px-data-table>
+
+<!-- <px-data-table table-data={{assetDataList}} > 
+<px-data-table-column name="assetType.name" type="string" filterable sortable editable></px-data-table-column></px-data-table> -->
+<px-spinner id="spinner_asset" style="display:none;margin:0 auto"
+size="100">
+</px-spinner>
+<px-modal  modal-heading="{{'Asset > '}}{{assetName}}" class="modalPGC" id="tagModal" btn-modal-negative="Close">
+
+<button class="btn delTagBtn" ng-click="deleteSelectedTags()">Delete</button>
+		 <input type="button"  id="newBtn" class="modal-trigger btn" value="" style="display: none;">
+		 
+ <px-data-table table-data="{{tagDataList}}" language="en" filterable sortable selectable>
+ <px-data-table-column type="string" name="name" label="Name" sortable  filterable></px-data-table-column>
+ <px-data-table-column type="string" name="sourceKey" label="Source Key" sortable  filterable></px-data-table-column>
+ <px-data-table-column type="string" name="uri" label="Uri" sortable filterable></px-data-table-column>
+ <px-data-table-column type="string" name="description" label="Description" sortable filterable></px-data-table-column>
+ </px-data-table> 
+</px-modal>
+
+</px-card>

@@ -36,17 +36,16 @@ define(['angular', 'angular-ui-router'], function(angular) {
 		        templateUrl: 'views/loginPage.html',
 		        controller: 'loginCtrl'
 		    })
-		    
-		    .state('home', {
-		    	url: '/home',
-		        templateUrl: 'views/home.html',
-		        controller: 'HomeCtrl'
+		       .state('assets', {
+		    	url: '/assets',
+		        templateUrl: 'views/assets.html',
+		        controller: 'AssetCtrl'
 		    })
 		    
-		    .state('balnk', {
-		    	url: '/blank',
-		        templateUrl: 'views/blank.html',
-		        controller: 'BlankCtrl'
+		    .state('configuration', {
+		    	url: '/config',
+		        templateUrl: 'views/configuration.html',
+		        controller: 'ConfigCtrl'
 		    });
 		    
 		   
@@ -54,9 +53,9 @@ define(['angular', 'angular-ui-router'], function(angular) {
 
        $urlRouterProvider.otherwise(function ($injector) {
             var $state = $injector.get('$state');
-            //document.querySelector('px-app-nav').markSelected('/billing');
+           // document.querySelector('px-app-nav').markSelected('/home');
            // $("px-app-nav").hide();
-            $state.go('home');
+            $state.go('configuration');
         });
        
       /* $urlRouterProvider.otherwise(function ($injector) {

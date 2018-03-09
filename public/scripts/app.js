@@ -40,11 +40,8 @@ define([
             name: 'Predix Seed',
             session: {},
             tabs: [
-                {icon: 'fa-pie-chart', state: 'home', label: 'Home'},
-                {icon: 'fa-pie-chart', state: 'blank', label: 'Blank'},
-              
-                
-                
+                {icon: 'fa fa-cogs', state: 'configuration', label: 'Configuration'},
+                {icon: 'fa-pie-chart', state: 'assets', label: 'Assets'} 
             ]
         };
 
